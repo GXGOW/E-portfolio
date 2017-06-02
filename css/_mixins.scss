@@ -1,0 +1,3 @@
+@mixin gradient-bg($direction) {
+  background: linear-gradient(to $direction, black, #187ab2);
+}

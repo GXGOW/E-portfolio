@@ -1,0 +1,5 @@
+.idea/
+css/.sass-cache/
+node_modules/
+yarn.lock
+dist/

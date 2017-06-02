@@ -1,0 +1,38 @@
+.pp {
+    float: left;
+}
+
+figcaption {
+    font-size: 2em;
+}
+
+.pic {
+    width: 150px;
+}
+
+.B {
+    float: left;
+}
+
+.B img {
+    width: 70%
+}
+
+div {
+    margin-left: 1%;
+}
+
+.bio {
+    float: left;
+    padding-top: 10%;
+    line-height: 1.5em;
+    display: table;
+}
+
+footer {
+    font-size: 0.7em;
+    text-align: center;
+    background-color: black;
+    color: white;
+    clear: both;
+}

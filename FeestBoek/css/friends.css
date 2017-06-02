@@ -1,0 +1,9 @@
+div {
+    margin-left: 3%;
+    background-color: #fff;
+    width: 30%;
+    height: 100%;
+    margin-top: 3%;
+    border-style: dotted;
+    border-width: 0.1em;
+}

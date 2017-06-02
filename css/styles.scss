@@ -1,0 +1,573 @@
+@import "variables";
+@import "mixins";
+
+@keyframes body {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/*menu*/
+
+.slideout-menu {
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 0;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  display: none;
+}
+
+.slideout-panel {
+  position: relative;
+  z-index: 1;
+}
+
+.slideout-open,
+.slideout-open body,
+.slideout-open .slideout-panel {
+  overflow: hidden;
+}
+
+.slideout-open .slideout-menu {
+  display: block;
+}
+
+.toggle-button {
+  background: rgba(255, 0, 0, 0) url("../images/menu.png") no-repeat center top;
+  width: 40px;
+  height: 40px;
+  margin-top: 5px;
+  margin-left: 5px;
+  border: none;
+}
+
+.slideout-panel, #content {
+  height: auto;
+  min-height: 100%;
+}
+
+#content {
+  padding-top: 10%;
+  padding-bottom: 5%;
+  p {
+    margin-left: 1.2em;
+    margin-right: 1.2em;
+  }
+}
+
+#main {
+  padding-bottom: 2em;
+}
+
+#talent {
+  display: none;
+  margin-left: 1em;
+}
+
+html, body {
+  height: 100%;
+  min-height: 100%;
+}
+
+#menu {
+  @include gradient-bg(right);
+  width: 256px;
+  margin-left: 0;
+  position: fixed;
+  min-height: 100%;
+  h2 {
+    color: white;
+    font-size: 2em;
+    text-align: center;
+  }
+  ul {
+    padding-left: 0;
+    li {
+      padding-left: 1em;
+      border-bottom: 1px solid white;
+      padding-bottom: .5em;
+      padding-top: .5em;
+      a {
+        color: white;
+        margin-bottom: .2em;
+        &:hover {
+          color: $orange;
+        }
+      }
+    }
+  }
+}
+
+#langswitch {
+  position: absolute;
+  bottom: 0;
+  width: 80%;
+  margin-left: 10%;
+  margin-bottom: 2%;
+  border-radius: 20px;
+  font-size: 14px;
+  color: white;
+  @include gradient-bg(right);
+  option {
+    color: black;
+  }
+}
+
+/* header */
+
+#header, footer {
+  @include gradient-bg(left);
+}
+
+h1,
+h2,
+h3 {
+  font-family: $header;
+  text-shadow: 1px 1px 5px $dblue;
+}
+
+h1 {
+  float: right;
+  color: white;
+  font-size: 2.5em;
+  padding-right: 2%;
+  sup {
+    font-size: .5em;
+    vertical-align: top;
+    line-height: 1.7em;
+  }
+}
+
+h3 {
+  margin-bottom: .51em;
+  color: $dblue;
+  font-size: 2em;
+  text-align: center;
+  font-family: $header;
+  border-bottom: 1px solid black;
+  a {
+    color: $dblue;
+  }
+}
+
+h4 {
+  font-family: $font;
+  text-align: center;
+  text-decoration: underline;
+  font-size: 1.2em;
+  margin-bottom: .3em;
+}
+
+/* body */
+
+body {
+  width: 100%;
+  animation: body .3s;
+}
+
+body,
+#panel {
+  background-color: $bg;
+}
+
+#desktop {
+  display: none;
+}
+
+ul {
+  list-style: none;
+}
+
+p,
+a,
+td,
+tr,
+label {
+  font-family: $font;
+  font-size: 1em;
+  line-height: 1.4em;
+}
+
+p {
+  padding-bottom: .5em;
+}
+
+.iframe {
+  display: flex;
+  justify-content: center;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+a {
+  text-decoration: none;
+  color: $dorito;
+  transition: .3s ease-in-out;
+  &:hover {
+    color: $orange;
+    transition: .3s ease-in-out;
+    cursor: pointer;
+  }
+}
+
+#links {
+  text-align: center;
+}
+
+#valkuil {
+  color: black;
+}
+
+.site {
+  text-align: center;
+}
+
+#inhoud {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  margin-bottom: 1.5em;
+  margin-top: 1.5em;
+  ul {
+    padding: .5em;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    text-align: center;
+    border: 1px dotted $lblue;
+    li {
+      padding-bottom: .5em;
+      &:last-of-type {
+        padding-bottom: 0;
+      }
+    }
+  }
+}
+
+#verslag {
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 15px;
+  display: none;
+  padding-top: .8em;
+  img {
+    width: 80%;
+    height: 80%;
+  }
+  p {
+    text-align: left;
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+  ul {
+    @extend p;
+    list-style: circle;
+  }
+}
+
+#assSelect {
+  margin-left: 35%;
+  margin-bottom: 2em;
+}
+
+#trump {
+  width: 90%;
+}
+
+#slides {
+  display: none;
+}
+
+/* table */
+
+table {
+  width: 100%;
+}
+
+td {
+  padding-top: .5em;
+  padding-bottom: .5em;
+  padding-right: 1em;
+  text-align: right;
+}
+
+th {
+  text-align: left;
+  padding-left: 1em;
+}
+
+picture {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 1em;
+  padding-top: 1em;
+}
+
+.portfolio{
+
+}
+
+/* contact */
+
+.error{
+  color: red;
+}
+
+#form {
+  margin-left: 1em;
+}
+
+input,
+textarea {
+  background-color: lightgray;
+  transition: .3s ease-in-out;
+  &:focus {
+    background-color: white;
+    transition: .3s ease-in-out;
+  }
+}
+
+textarea {
+  resize: none;
+  height: 3.5em;
+  &::-webkit-input-placeholder {
+    color: white;
+  }
+  &:-ms-input-placeholder {
+    color: white;
+  }
+}
+
+input {
+  &::-webkit-input-placeholder {
+    color: white;
+  }
+  &:-ms-input-placeholder {
+    color: white;
+  }
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  border-radius: 5px;
+  width: 80%;
+  font-family: $font;
+  font-size: 1em;
+  text-indent: 5px;
+}
+
+input[type="text"],
+input[type="email"] {
+  height: 1.2em;
+}
+
+input[type="submit"] {
+  display: block;
+  border: none;
+  background-color: $lblue;
+  color: white;
+  height: 3em;
+  width: 5em;
+  border-radius: 10px;
+  &:hover {
+    background-color: $orange;
+    box-shadow: 0 0 30px $lblue;
+  }
+}
+
+label {
+  display: block;
+  padding-bottom: .5em;
+  padding-top: .5em;
+}
+
+/* footer */
+
+footer {
+  p {
+    color: white;
+    padding-bottom: 0;
+    font-size: 0.8em;
+  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+}
+
+@media screen and (min-width: 480px) {
+  #header {
+    height: 4.2em;
+  }
+  #menu {
+    h2 {
+      font-size: 2.5em;
+    }
+    li {
+      font-size: 1.2em;
+    }
+  }
+  h1 {
+    font-size: 3.5em;
+  }
+  h3 {
+    font-size: 2.7em;
+  }
+  p,
+  td,
+  tr,
+  label {
+    font-size: 1.3em;
+  }
+  p > a {
+    font-size: 1em;
+  }
+  .toggle-button {
+    background: url("../images/menu_tab.png") center top no-repeat;
+    width: 55px;
+    height: 46px;
+    margin: 8px;
+  }
+  label {
+    margin-right: 1em;
+  }
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    width: 30em;
+    margin-bottom: .5em;
+    margin-top: .5em;
+    &:active {
+      content: none;
+    }
+  }
+  .rule {
+    display: flex;
+    flex-flow: row;
+  }
+  .content p {
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+  }
+  footer {
+    p {
+      font-size: 1em;
+    }
+  }
+  #trump {
+    width: 100%;
+  }
+  #verslag {
+    img {
+      width: auto;
+      height: auto;
+    }
+  }
+}
+
+@media screen and (min-width: 992px) {
+  /* mobiel naar desktop menu */
+  .toggle-button {
+    visibility: hidden;
+  }
+  #menu {
+    display: block;
+    height: 100%;
+    a {
+      font-size: 1.3em;
+    }
+  }
+
+  #panel {
+    width: auto;
+    margin-left: 256px;
+    background-color: transparent;
+  }
+
+  #header {
+    display: none;
+  }
+  /* overige aanpassingen*/
+  h1 {
+    clear: both;
+    text-align: center;
+    padding-right: 0;
+    width: 100%;
+    font-size: 5.5em;
+  }
+  #content {
+    margin-left: 15%;
+    margin-right: 15%;
+  }
+  .cat {
+    display: flex;
+    align-items: baseline;
+    picture {
+      display: inline-block;
+      width: 50%;
+    }
+  }
+
+  #form {
+    width:100%;
+    text-align: center;
+    label {
+      text-align: left;
+    }
+    input, textarea {
+      width:100%;
+    }
+    input[type="submit"]{
+      width: 10%;
+    }
+  }
+
+  #cv {
+    .tablepart {
+      display: flex;
+      flex-flow: row;
+      justify-content: space-between;
+      h3 {
+        width: 30%;
+        height: 100%;
+        border-bottom: none;
+      }
+      table {
+        width: 70%;
+        border-left: 1px solid black;
+        margin-bottom: 1%;
+        td {
+          font-size: 1.1em;
+        }
+      }
+    }
+  }
+  picture {
+    text-align: center;
+    width: 100%;
+  }
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    width: 55%;
+  }
+
+  .portfolio {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    margin-bottom: 2em;
+    figure {
+      margin-top: 5px;
+    }
+  }
+}

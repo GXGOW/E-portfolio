@@ -1,0 +1,109 @@
+body {
+    background-color: #ebebeb;
+    margin: 0 auto;
+    font-family: Arial, Calibri, sans-serif;
+}
+
+footer {
+    font-size: 0.7em;
+    text-align: center;
+    background-color: black;
+    color: white;
+    position: relative;
+    bottom: 0;
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+}
+
+footer p {
+    padding-left: 0.5em;
+}
+
+a {
+    color: #008e3c;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #6ecc6b
+}
+
+header {
+    text-align: center;
+    background-color: #d3ffe7;
+    display: inline-block;
+    width: 100%;
+}
+
+nav {
+    display: block;
+    text-align: center;
+    word-spacing: 2.3em;
+    font-size: 1.2em;
+}
+
+nav li {
+    display: inline-block;
+}
+
+div h1 {
+    text-align: center;
+}
+
+h2 {
+    text-align: center
+}
+
+.post {
+    text-align: left;
+    background: white;
+    width: 60%;
+    margin-top: 2%;
+    padding-left: 1%;
+    padding-right: 1%;
+    padding-top: 1%;
+    border-style: dotted;
+    border-width: 0.1em;
+    padding-bottom: 1%;
+}
+
+.post:last-of-type {
+    margin-bottom: 2%;
+}
+
+figure {
+    margin: 0 auto;
+    padding: 0;
+}
+
+textarea {
+    width: 50%;
+    height: 10%;
+}
+
+div {
+    margin: 0 auto;
+}
+
+figcaption {
+    display: inline;
+}
+
+.pp {
+    text-align: center
+}
+
+.B {
+    float: left;
+    margin: 0%;
+}
+
+.B img {
+    width: 70%
+}
+
+textarea {
+    width: 99%;
+    resize: none;
+}
