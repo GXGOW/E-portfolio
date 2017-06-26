@@ -17,7 +17,7 @@ const merge = require('merge-stream');
 
 const DEST = 'build/';
 
-gulp.task('default', ['minify-css']);
+gulp.task('default', ['js-watch','watch-sass','minify-watch']);
 
 // Browserify options
 var customOpts = {

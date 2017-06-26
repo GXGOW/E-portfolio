@@ -7,3 +7,4 @@ build/
 *.scssc
 pacakge-lock.json
 *.log
+*.css.map
