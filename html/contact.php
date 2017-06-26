@@ -14,7 +14,6 @@ global $translated; ?>
 <?php getMenu(); ?>
     <div id="panel">
         <?php getHeader(); ?>
-        </header>
         <div id="content">
             <?php
                 echo '<form id="form" action="">
