@@ -41,8 +41,6 @@ global $translated; ?>
         <?php getFooter(); ?>
     </div>
 <?php getScripts(); ?>
-<script src="../node_modules/jquery-validation/dist/jquery.validate.min.js"></script>
-<script src="../dist/form.min.js"></script>
 </body>
 
 </html>

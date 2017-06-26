@@ -27,7 +27,6 @@ global $translated; ?>
         <?php getFooter(); ?>
     </div>
 <?php getScripts(); ?>
-<script src="../dist/trump.min.js"></script>
 </body>
 
 </html>

@@ -5,6 +5,9 @@
  * Date: 16/04/2017
  * Time: 13:03
  */
+//Deze lijn is enkel voor Abbatis webserver. Een of andere feature ofzo. Anders werkt session_start() niet vanwege
+//permission error
+session_save_path(sys_get_temp_dir());
 session_start();
 ob_start();
 if (!isset($_SESSION['lang'])) {
@@ -31,17 +34,17 @@ function getHead()
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="#187ab2">
 
-    <link href="' . $prefix1 . 'dist/reset_browser_styles.css" rel="stylesheet"/>
-    <link href="' . $prefix1 . 'dist/styles.css" rel="stylesheet"/>
-    <link href=\'http://fonts.googleapis.com/css?family=Source+Code+Pro:200,300\' rel=\'stylesheet\' type=\'text/css\'>';
+    <link href="' . $prefix1 . 'build/reset.css" rel="stylesheet"/>
+    <link href="' . $prefix1 . 'build/styles.min.css" rel="stylesheet"/>
+    <link href="' . $prefix1 . 'build/font-awesome/css/font-awesome.min.css" rel="stylesheet"/>
+    <link href="' . $prefix1 . 'build/styles.min.css" rel="stylesheet"/>
+    <link href="http://fonts.googleapis.com/css?family=Source+Code+Pro:200,300" rel="stylesheet">';
 }
 
 function getScripts()
 {
     global $prefix1;
-    echo '<script src="' . $prefix1 . 'dist/slideout.min.js"></script>
-    <script src="'.$prefix1.'node_modules/jquery/dist/jquery.min.js"></script>
-    <script src="'.$prefix1.'dist/functions.min.js"></script>';
+    echo '<script src="'.$prefix1.'build/functions.min.js"></script>';
 }
 
 function getMenu()
@@ -50,8 +53,6 @@ function getMenu()
     include $prefix1.'locale/'.$_SESSION['lang'].'/menu.php';
     echo
         '<nav id="menu">
-    <header>
-        <h2>Index</h2>
         <ul>
             <li><a href="' . $prefix1 . 'index.php"><i class="fa fa-home" aria-hidden="true"></i> '.$transmenu[0].'</a></li>
             <li><a href="' . $prefix2 . 'profile.php"><i class="fa fa-male" aria-hidden="true"></i> '.$transmenu[1].'</a></li>
@@ -66,7 +67,6 @@ function getMenu()
             <li><a href="' . $prefix2 . 'links.php"><i class="fa fa-external-link" aria-hidden="true"></i> '.$transmenu[5].'</a></li>
             <li><a href="' . $prefix2 . 'contact.php" class="here"><i class="fa fa-envelope-o" aria-hidden="true"></i> '.$transmenu[6].'</a></li>
         </ul>
-    </header>
     ' .
         getLangOptions()
         . '
@@ -76,7 +76,7 @@ function getMenu()
 function getHeader()
 {
     echo
-    '<header id="header">
+    '<header>
         <button class="toggle-button"></button>
         <h1 id="title"></h1>
     </header>';

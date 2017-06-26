@@ -1,11 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Exo);
 @import url(https://fonts.googleapis.com/css?family=Tienne:400,900);
-@import url(../node_modules/font-awesome/css/font-awesome.css);
-@keyframes body {
-  from {
-    opacity: 0; }
-  to {
-    opacity: 1; } }
 /*menu*/
 .slideout-menu {
   left: 0;
@@ -60,25 +54,24 @@ html, body {
   min-height: 100%; }
 
 #menu {
-  background: linear-gradient(to right, black, #187ab2);
+  background: linear-gradient(to right, #0c537a, #187ab2);
   width: 256px;
   margin-left: 0;
   position: fixed;
   min-height: 100%; }
-  #menu h2 {
-    color: white;
-    font-size: 2em;
-    text-align: center; }
   #menu ul {
+    padding-top: 2em;
     padding-left: 0; }
     #menu ul li {
-      padding-left: 1em;
       border-bottom: 1px solid white;
-      padding-bottom: .5em;
       padding-top: .5em; }
       #menu ul li a {
+        overflow: hidden;
+        display: block;
+        padding-bottom: .3em;
+        padding-left: 1em;
         color: white;
-        margin-bottom: .2em; }
+        font-size: 1.5em; }
         #menu ul li a:hover {
           color: #ffa022; }
 
@@ -91,13 +84,18 @@ html, body {
   border-radius: 20px;
   font-size: 14px;
   color: white;
-  background: linear-gradient(to right, black, #187ab2); }
+  background: linear-gradient(to right, #0c537a, #187ab2); }
   #langswitch option {
     color: black; }
 
 /* header */
-#header, footer {
-  background: linear-gradient(to left, black, #187ab2); }
+header, footer {
+  background: linear-gradient(to left, #0c537a, #187ab2); }
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
 
 h1,
 h2,
@@ -134,8 +132,7 @@ h4 {
 
 /* body */
 body {
-  width: 100%;
-  animation: body .3s; }
+  width: 100%; }
 
 body,
 #panel {
@@ -223,9 +220,6 @@ a {
 
 #trump {
   width: 90%; }
-
-#slides {
-  display: none; }
 
 /* table */
 table {
@@ -320,7 +314,7 @@ footer {
     font-size: 0.8em; }
 
 @media screen and (min-width: 480px) {
-  #header {
+  header {
     height: 4.2em; }
 
   #menu h2 {
@@ -380,6 +374,9 @@ footer {
   #verslag img {
     width: auto;
     height: auto; } }
+#slides {
+  display: none; }
+
 @media screen and (min-width: 992px) {
   /* mobiel naar desktop menu */
   .toggle-button {
@@ -396,7 +393,7 @@ footer {
     margin-left: 256px;
     background-color: transparent; }
 
-  #header {
+  header {
     display: none; }
 
   /* overige aanpassingen*/
@@ -459,5 +456,3 @@ footer {
     margin-bottom: 2em; }
     .portfolio figure {
       margin-top: 5px; } }
-
-/*# sourceMappingURL=styles.css.map */

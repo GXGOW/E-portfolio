@@ -1,3 +1,6 @@
+window.jQuery = window.$ = require('jquery');
+window.Slideout = require('slideout');
+window.slidesjs = require('../js/jquery.slides');
 var loc = location.pathname.split('/').slice(-1)[0];
 var isIE = /*@cc_on!@*/false || !!document.documentMode;
 var mainView = {
@@ -17,10 +20,12 @@ var mainView = {
         }
         $("#langswitch").change(function () {
             mainView.changeLocale($("#langswitch").val())
-        })
-        $("#assSelect").change(function () {
-            mainView.loadAssignment($("#assSelect").val());
-        })
+        });
+        if($('#assSelect').length) {
+            $("#assSelect").change(function () {
+                mainView.loadAssignment($("#assSelect").val());
+            });
+        }
     },
 
     setTitle:function() {
@@ -38,6 +43,9 @@ var mainView = {
         document.querySelector('.toggle-button').addEventListener('click', function () {
             slideout.toggle();
         });
+        $("#menu").find("ul li a").each(function(){
+            $(this).addClass("ripple");
+        })
     },
 
     slideOpen: function () {
@@ -64,13 +72,17 @@ var mainView = {
             play: {
                 active: false,
                 auto: true,
-                effect: "slide",
+                effect: 'slide',
                 interval: 6000,
                 pauseOnHover: true
+            },
+            callback: {
+                loaded: function(number){
+                    $("#slides").show();
+                    $("#slides").find("i").hide();
+                }
             }
         });
-        $("#slides").show();
-        $("#slides i").hide();
     },
 
     changeLocale: function (locale) {
@@ -109,6 +121,6 @@ var mainView = {
     }
 };
 
-window.onload = function () {
+window.onload = function() {
     mainView.init();
-};
+}

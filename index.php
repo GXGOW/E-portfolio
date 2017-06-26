@@ -16,13 +16,7 @@ global $translated; ?>
     <?php getHeader(); ?>
     <div id="main">
         <div id="slides">
-            <?php initSlides() ?>
-            <span class="slidesjs-previous slidesjs-navigation"><i class="fa fa-arrow-left fa-lg"
-                                                                   aria-hidden="true"></i>
-</span>
-            <span class="slidesjs-next slidesjs-navigation"><i class="fa fa-arrow-right fa-lg"
-                                                               aria-hidden="true"></i>
-</span>
+            <?php initSlides()?>
         </div>
         <div id="content">
             <article>
@@ -46,7 +40,6 @@ global $translated; ?>
     <?php getFooter() ?>
 </div>
 <?php getScripts(); ?>
-<script src="dist/jquery.slides.min.js"></script>
 <script async src="https://www.redditstatic.com/comment-embed.js"></script>
 </body>
 
