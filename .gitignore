@@ -5,6 +5,6 @@ yarn.lock
 build/
 *.map
 *.scssc
-pacakge-lock.json
+package-lock.json
 *.log
 *.css.map
