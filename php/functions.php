@@ -34,6 +34,7 @@ function getHead()
     <link href="' . $prefix1 . 'build/font-awesome/css/font-awesome.min.css" rel="stylesheet"/>
     <link href="' . $prefix1 . 'build/styles.min.css" rel="stylesheet"/>');
     echo '<meta charset="UTF-8">
+    <link rel="icon" sizes="512x512" href="' . $prefix1 . 'images/icon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=yes">
     <!-- Android Chrome colored statusbar -->
     <meta name="theme-color" content="#187ab2">
