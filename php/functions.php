@@ -1,15 +1,14 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Nicolas
- * Date: 16/04/2017
- * Time: 13:03
- */
 //Deze lijn is enkel voor Abbatis webserver. Een of andere feature ofzo. Anders werkt session_start() niet vanwege
 //permission error
 session_save_path(sys_get_temp_dir());
 session_start();
 ob_start();
+//Development of production?
+$dev;
+if($_SERVER['SERVER_NAME']=='localhost'){
+    $dev=true;
+}
 if (!isset($_SESSION['lang'])) {
     setLang("nl_BE");
 }
@@ -25,26 +24,41 @@ if ((basename($_SERVER["PHP_SELF"])) === "index.php") {
 
 function getHead()
 {
-    global $prefix1;
+    global $prefix1, $dev;
+    $links = ($dev ?
+        '<link href="' . $prefix1 . 'node_modules/reset-css/reset.css" rel="stylesheet"/>
+        <link href="' . $prefix1 . 'node_modules/font-awesome/css/font-awesome.css" rel="stylesheet"/>
+        <link href="' . $prefix1 . 'css/styles.css" rel="stylesheet"/>'
+        :
+        '<link href="' . $prefix1 . 'build/reset.css" rel="stylesheet"/>
+    <link href="' . $prefix1 . 'build/font-awesome/css/font-awesome.min.css" rel="stylesheet"/>
+    <link href="' . $prefix1 . 'build/styles.min.css" rel="stylesheet"/>');
     echo '<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=yes">
     <!-- Android Chrome colored statusbar -->
     <meta name="theme-color" content="#187ab2">
     <!-- iOS colored statusbar -->
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="#187ab2">
-
-    <link href="' . $prefix1 . 'build/reset.css" rel="stylesheet"/>
-    <link href="' . $prefix1 . 'build/styles.min.css" rel="stylesheet"/>
-    <link href="' . $prefix1 . 'build/font-awesome/css/font-awesome.min.css" rel="stylesheet"/>
-    <link href="' . $prefix1 . 'build/styles.min.css" rel="stylesheet"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="#187ab2">'
+    .$links.'
     <link href="http://fonts.googleapis.com/css?family=Source+Code+Pro:200,300" rel="stylesheet">';
 }
 
 function getScripts()
 {
-    global $prefix1;
-    echo '<script src="'.$prefix1.'build/functions.min.js"></script>';
+    global $prefix1,$dev;
+    $scripts = $dev ?
+        '<script src="'.$prefix1.'node_modules/jquery/dist/jquery.js"></script>
+        <script src="'.$prefix1.'node_modules/slideout/dist/slideout.js"></script>
+        <script src="'.$prefix1.'node_modules/jquery-validation/dist/jquery.validate.js"></script>
+        <script src="'.$prefix1.'js/jquery.slides.js"></script>
+        <script src="'.$prefix1.'js/functions.js"></script>
+        <script src="'.$prefix1.'js/form.js"></script>
+        <script src="'.$prefix1.'js/trump.js"></script>
+        '
+        :
+        '<script src="'.$prefix1.'build/functions.min.js"></script>';
+    echo $scripts;
 }
 
 function getMenu()
@@ -90,13 +104,20 @@ function getFooter()
     </footer>';
 }
 
-function initSlides()
+function getImages($path, $shuffled)
 {
-    $images = glob("images/slideshow/*.*");
-    shuffle($images);
+    $images = glob($path.'/*.*');
+    $shuffled ? shuffle($images) : null;
+    $ret = '';
     foreach ($images as $item) {
-        echo '<img src="' . $item . '" alt="' . substr($item, strrpos($item, '/') + 1) . '">';
+        $ret .= '<img src="' . $item . '" alt="' . substr($item, strrpos($item, '/') + 1) . '">';
     };
+    return $ret;
+}
+
+function initSlides($path)
+{
+    echo '<div id="slides">'.getImages('images/slideshow',true). '</div>';
 }
 
 function getLangOptions()
