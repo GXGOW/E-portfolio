@@ -1,4 +1,7 @@
-window.$.validate = window.jQuery.validate = require('jquery-validation');
+try {
+    window.$.validate = window.jQuery.validate = require('jquery-validation');
+} catch (e) {
+}
 var requiredmessage = "Gelieve dit veld in te vullen";
 
 if($('#form').length) {

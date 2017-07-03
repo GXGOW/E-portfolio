@@ -29,12 +29,17 @@
 }
 
 .toggle-button {
-  background: rgba(255, 0, 0, 0) url("../images/menu.png") no-repeat center top;
+  background: rgba(255, 0, 0, 0);
+  color: white;
   width: 40px;
   height: 40px;
-  margin-top: 5px;
-  margin-left: 5px;
   border: none;
+  padding: 0;
+  svg {
+    width: 40px;
+    height: 40px;
+    fill: white;
+  }
 }
 
 .slideout-panel, #content {
@@ -117,6 +122,8 @@ header {
   display: flex;
   justify-content:space-between;
   align-items: center;
+  padding-left: 2%;
+  padding-right: 2%;
 }
 
 h1,
@@ -127,10 +134,8 @@ h3 {
 }
 
 h1 {
-  float: right;
   color: white;
   font-size: 2.5em;
-  padding-right: 2%;
   sup {
     font-size: .5em;
     vertical-align: top;
@@ -273,6 +278,17 @@ a {
   width: 90%;
 }
 
+#row {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  img {
+    margin-bottom: 5%;
+    width: 60%;
+  }
+}
+
 /* table */
 
 table {
@@ -393,6 +409,10 @@ footer {
   bottom: 0;
 }
 
+#slides {
+  display: none;
+}
+
 @media screen and (min-width: 480px) {
   header {
     height: 4.2em;
@@ -419,12 +439,6 @@ footer {
   }
   p > a {
     font-size: 1em;
-  }
-  .toggle-button {
-    background: url("../images/menu_tab.png") center top no-repeat;
-    width: 55px;
-    height: 46px;
-    margin: 8px;
   }
   label {
     margin-right: 1em;
@@ -461,10 +475,14 @@ footer {
       height: auto;
     }
   }
-}
-
-#slides {
-  display: none;
+  #row {
+    flex-flow: row wrap;
+    flex-direction: row;
+    img {
+      width: 40%;
+      margin-right: 5%;
+    }
+  }
 }
 
 @media screen and (min-width: 992px) {
@@ -500,14 +518,6 @@ footer {
   #content {
     margin-left: 15%;
     margin-right: 15%;
-  }
-  .cat {
-    display: flex;
-    align-items: baseline;
-    picture {
-      display: inline-block;
-      width: 50%;
-    }
   }
 
   #form {
@@ -561,6 +571,14 @@ footer {
     margin-bottom: 2em;
     figure {
       margin-top: 5px;
+    }
+  }
+
+  #row {
+    flex-flow: row;
+    img {
+      width: 25%;
+      margin-right: 1%;
     }
   }
 }

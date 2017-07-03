@@ -15,15 +15,14 @@ global $translated; ?>
 <div id="panel">
     <?php getHeader(); ?>
     <div id="main">
-        <div id="slides">
-            <?php initSlides()?>
-        </div>
+        <?php initSlides('images/slideshow/*.*') ?>
         <div id="content">
             <article>
                 <?php
                 foreach ($translated as $item) {
                     echo '<p>' . $item . '</p>';
-                } ?>
+                }
+                ?>
             </article>
             <div class="iframe">
             <div class="reddit-embed" data-embed-media="www.redditmedia.com" data-embed-parent="false"

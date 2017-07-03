@@ -1,6 +1,6 @@
 <?php
 include '../php/functions.php';
-include '../locale/' . $_SESSION["lang"] .'/'.basename($_SERVER["PHP_SELF"]);
+include '../locale/' . $_SESSION["lang"] . '/' . basename($_SERVER["PHP_SELF"]);
 global $translated; ?>
 <!doctype html>
 <html>
@@ -28,26 +28,8 @@ global $translated; ?>
                     case strpos($key, 'p'):
                         echo '<p>' . $val . '</p>';
                         if ($key == 'p5') {
-                            echo '<div class="cat">
-                <picture>
-                    <source srcset="../images/griffin_full.jpg" media="(min-width: 480px)">
-                    <img src="../images/griffin_mobile.jpg" alt="griffin">
-                </picture>
-                <picture>
-                    <source srcset="../images/sacha_full.jpg" media="(min-width: 480px)">
-                    <img src="../images/sacha_mobile.jpg" alt="sacha">
-                </picture>
-            </div>
-            <div class="cat">
-                <picture>
-                    <source srcset="../images/beau_full.jpg" media="(min-width: 480px)">
-                    <img src="../images/beau_mobile.jpg" alt="beau">
-                </picture>
-                <picture>
-                    <source srcset="../images/pooky_full.jpg" media="(min-width: 480px)">
-                    <img src="../images/pooky_mobile.jpg" alt="pooky">
-                </picture>
-            </div>';
+                            echo '<div id="row">' .
+                                getImages('../images/cats', false) . '</div>';
                         }
                         break;
                 }
