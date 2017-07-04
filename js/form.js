@@ -5,6 +5,9 @@ try {
 var requiredmessage = "Gelieve dit veld in te vullen";
 
 function initForm() {
+    $('#form').submit(function (e) {
+        e.preventDefault();
+    });
     $(function () {
         $("#form").validate({
             rules: {

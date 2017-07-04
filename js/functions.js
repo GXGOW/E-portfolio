@@ -7,6 +7,7 @@ try {
 }
 
 var isIE = /*@cc_on!@*/false || !!document.documentMode;
+var isMobile = screen.width <= 992;
 var mainView = {
     init: function () {
         if (isIE) {
@@ -14,11 +15,8 @@ var mainView = {
         }
         this.loadPage('index');
         this.initMenu();
-        this.setHeaderText();
         this.setTitle();
-        if (screen.width <= 992) {
-            this.setTitle(document.title);
-        }
+        this.setHeaderText();
         $("#langswitch").change(function () {
             mainView.changeLocale($("#langswitch").val());
         });
@@ -38,11 +36,13 @@ var mainView = {
                     initForm();
             }
             $('html, body').animate({scrollTop: '0px'}, 300);
+            mainView.setHeaderText();
+            mainView.setTitle();
         });
     },
 
     setTitle: function () {
-        $("title").text($("title").text() + " - Nicolas' e-portfolio")
+        $("title").text($(".current").text() + " - Nicolas' e-portfolio")
     },
 
     initMenu: function () {
@@ -76,8 +76,10 @@ var mainView = {
         });
     },
 
-    setHeaderText: function (title) {
-        $("#title").text($("title").text());
+    setHeaderText: function () {
+        if (isMobile) {
+            $("#title").text($(".current").text());
+        }
     },
 
     initSlides: function () {
