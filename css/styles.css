@@ -49,7 +49,7 @@
 #main {
   padding-bottom: 2em; }
 
-#talent {
+#sublist {
   display: none;
   margin-left: 1em; }
 
@@ -64,8 +64,9 @@ html, body {
   position: fixed;
   min-height: 100%; }
   #menu ul {
-    padding-top: 2em;
     padding-left: 0; }
+    #menu ul:first-child {
+      padding-top: 2em; }
     #menu ul li {
       border-bottom: 1px solid white;
       padding-top: .5em; }
@@ -76,8 +77,9 @@ html, body {
         padding-left: 1em;
         color: white;
         font-size: 1.5em; }
-        #menu ul li a:hover {
-          color: #ffa022; }
+
+.current, #menu ul li a:hover {
+  color: #ffa022 !important; }
 
 #langswitch {
   position: absolute;
@@ -221,9 +223,6 @@ a {
 #assSelect {
   margin-left: 35%;
   margin-bottom: 2em; }
-
-#trump {
-  width: 90%; }
 
 #row {
   display: flex;
@@ -377,9 +376,6 @@ footer {
 
   footer p, footer #verslag ul, #verslag footer ul {
     font-size: 1em; }
-
-  #trump {
-    width: 100%; }
 
   #verslag img {
     width: auto;

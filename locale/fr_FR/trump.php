@@ -7,5 +7,4 @@
  */
 $translated = array(
     'p1' => 'Cliquez sur Trump et il parlera.',
-    'p2' => 'Si vous en avez assez, cliquez <a href="portfolio.php">ici</a> pour retourner à la page dernière.'
 );

@@ -1,0 +1,22 @@
+#center {
+    width: 100%;
+    text-align: center;
+}
+
+img {
+    width: 80%;
+}
+
+p {
+    font-family: Exo;
+}
+
+@media screen and (min-width: 480px) {
+    p {
+        font-size: 2em;
+    }
+
+    img {
+        width: 70%;
+    }
+}
