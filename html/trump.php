@@ -7,7 +7,7 @@ global $translated; ?>
 
 <head>
     <meta charset="UTF-8">
-    <link rel="icon" sizes="512x512" href="images/icon.png">
+    <link rel="icon" href="../images/trumpface.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=yes">
     <!-- Android Chrome colored statusbar -->
     <meta name="theme-color" content="#187ab2">
