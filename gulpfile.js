@@ -1,5 +1,4 @@
 const gulp = require('gulp');
-const ignore = require('gulp-ignore');
 const rename = require('gulp-rename');
 const gutil = require('gulp-util');
 const uglifyjs = require('gulp-uglify');
@@ -12,7 +11,6 @@ const sourcemaps = require('gulp-sourcemaps');
 const buffer = require('vinyl-buffer');
 const sass = require('gulp-ruby-sass');
 const filter = require('gulp-filter');
-const exec = require('gulp-exec');
 const merge = require('merge-stream');
 
 const DEST = 'build/';
