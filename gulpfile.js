@@ -42,6 +42,9 @@ function bundle() {
         //.pipe(sourcemaps.init({loadMaps: true})) // loads map from browserify file
         // Add transformation tasks to the pipeline here.
         .pipe(uglifyjs())
+        .on('error', function (err) {
+            gutil.log(gutil.colors.red('[Error]'), err.toString());
+        })
         .pipe(sourcemaps.write('./')) // writes .map file
         .pipe(gulp.dest(DEST));
 }
