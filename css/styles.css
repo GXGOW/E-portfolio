@@ -315,15 +315,23 @@ label {
 /* footer */
 footer {
   display: flex;
+  flex-flow: column;
   justify-content: center;
   align-items: center;
-  position: absolute;
-  width: 100%;
+  position: fixed;
+  width: calc(100% - 256px);
   bottom: 0; }
   footer p, footer #verslag ul, #verslag footer ul {
     color: white;
     padding-bottom: 0;
     font-size: 0.8em; }
+    footer p:last-of-type, footer #verslag ul:last-of-type, #verslag footer ul:last-of-type {
+      font-size: 1.5em; }
+  footer a {
+    color: white;
+    margin-right: .3em; }
+    footer a:hover {
+      color: #ffa022; }
 
 #slides {
   display: none; }

@@ -402,12 +402,23 @@ footer {
     color: white;
     padding-bottom: 0;
     font-size: 0.8em;
+    &:last-of-type {
+      font-size: 1.5em;
+    }
+  }
+  a {
+    color: white;
+    margin-right: .3em;
+    &:hover {
+      color: $orange;
+    }
   }
   display: flex;
+  flex-flow: column;
   justify-content: center;
   align-items: center;
-  position: absolute;
-  width: 100%;
+  position: fixed;
+  width: calc(100% - 256px);
   bottom: 0;
 }
 
