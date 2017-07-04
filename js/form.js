@@ -4,7 +4,7 @@ try {
 }
 var requiredmessage = "Gelieve dit veld in te vullen";
 
-if($('#form').length) {
+function initForm() {
     $(function () {
         $("#form").validate({
             rules: {

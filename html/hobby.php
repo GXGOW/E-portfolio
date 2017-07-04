@@ -2,21 +2,6 @@
 include '../php/functions.php';
 include '../locale/' . $_SESSION["lang"] . '/' . basename($_SERVER["PHP_SELF"]);
 global $translated; ?>
-<!doctype html>
-<html>
-
-<head>
-    <?php getHead(); ?>
-    <title>Bezigheden</title>
-</head>
-
-<body>
-<?php getMenu(); ?>
-
-<div id="panel">
-    <?php getHeader(); ?>
-
-    <div id="main">
         <div id="content">
             <?php
             foreach ($translated as $key => $value){
@@ -25,13 +10,7 @@ global $translated; ?>
                     case strpos($key, 'p'):
                         echo '<p>'.$value.'</p>';break;
                     case strpos($key, 'h'):
-                        echo '<h3 id="'.$value[0].'">'.$value[1].'</h3>';break;
-                    case $key === 'ul':
-                        echo '<div id="inhoud"><ul>';
-                        foreach ($value as $listkey => $listvalue){
-                            echo '<li><a href="'.$listkey.'">'.$listvalue.'</a></li>';
-                        }
-                        echo '</ul></div>';
+                        echo '<h3>' . $value . '</h3>';
                         break;
                     case $key === 'video':
                         echo '<div class="iframe">
@@ -50,11 +29,3 @@ global $translated; ?>
             }
             ?>
         </div>
-    </div>
-    <?php getFooter(); ?>
-</div>
-
-<?php getScripts(); ?>
-</body>
-
-</html>

@@ -2,19 +2,6 @@
 include '../php/functions.php';
 include '../locale/' . $_SESSION["lang"] .'/'.basename($_SERVER["PHP_SELF"]);
 global $translated; ?>
-<!doctype html>
-<html>
-
-<head>
-    <?php getHead(); ?>
-    <title>Links</title>
-</head>
-
-<body>
-<?php getMenu(); ?>
-    <div id="panel">
-        <?php getHeader(); ?>
-        <div id="main">
         <div id="content">
             <p><?php echo $translated[0]; ?></p>
 
@@ -28,10 +15,3 @@ global $translated; ?>
                 <p><a href="http://www.findtheinvisiblecow.com/" target="_blank">Find the invisible cow</a></p>
             </div>
         </div>
-        </div>
-        <?php getFooter(); ?>
-    </div>
-<?php getScripts(); ?>
-</body>
-
-</html>

@@ -2,18 +2,6 @@
 include '../php/functions.php';
 include '../locale/' . $_SESSION["lang"] .'/'.basename($_SERVER["PHP_SELF"]);
 global $translated; ?>
-<!doctype html>
-<html>
-
-<head>
-    <?php getHead(); ?>
-    <title>Contact</title>
-</head>
-
-<body>
-<?php getMenu(); ?>
-    <div id="panel">
-        <?php getHeader(); ?>
         <div id="content">
             <?php
                 //TODO locales foutmeldingen + functionaliteit achter die knop steken
@@ -38,9 +26,3 @@ global $translated; ?>
                 </form>';
               ?>
         </div>
-        <?php getFooter(); ?>
-    </div>
-<?php getScripts(); ?>
-</body>
-
-</html>

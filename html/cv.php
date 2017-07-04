@@ -2,19 +2,6 @@
 include '../php/functions.php';
 include '../locale/' . $_SESSION["lang"] . '/' . basename($_SERVER["PHP_SELF"]);
 global $translated; ?>
-<!doctype html>
-<html>
-
-<head>
-    <?php getHead(); ?>
-    <title>CV</title>
-</head>
-
-<body>
-<?php getMenu(); ?>
-<div id="panel">
-    <?php getHeader(); ?>
-    <div id="main">
         <div id="cv">
             <?php
             //Die tabellen invoegen was nog wel knap lastig
@@ -45,12 +32,3 @@ global $translated; ?>
             }
             ?>
         </div>
-    </div>
-    <?php getFooter(); ?>
-
-</div>
-<?php getScripts(); ?>
-
-</body>
-
-</html>
