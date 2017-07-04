@@ -7,20 +7,14 @@
  */
 $translated = array(
     'p1' => 'Deze pagina zal je wat meer vertellen over mijn hobby\'s en andere dingen die mij bezighouden.',
-    'ul' => array(
-        '#game' => 'Gaming',
-        '#music' => 'Muziek',
-        '#klj' => 'KLJ',
-        '#sport' => 'Sport'
-    ),
-    'h1' => array('game','Gaming'),
+    'h1' => 'Gaming',
     'p2' => 'Zoals ik op mijn profielpagina heb vernoemd, ben ik een fanatieke gamer. Daarom breng ik vaak mijn vrije
                 tijd door met gamen, hoewel mijn hoeveelheid vrije tijd door mijn studies sterk verminderd is. 
                 De genres van games die ik vooral speel, zijn
                 shooters als Call Of Duty, Counter Strike, Battlefield en freeroam games als Grand Theft Auto. Verder zijn er nog iets meer nostalgische
                 titels zoals de Age Of Empires-serie. Dit is nog maar een fractie van mijn games, ik kan er eindeloos over door
                 blijven gaan, maar daarvoor zou ik eerder een aparte website maken.',
-    'h2' => array('music', 'Muziek'),
+    'h2' => 'Muziek',
     'p3' => 'Ik luister ook veel naar muziek. Niet de mainstream popmuziek die veel te vaak gedraaid
                 wordt op de radio, maar wel de ruigere genres zoals metal en alle varianten daarop. Een aantal van mijn
                 favoriete bands zijn Five Finger Death Punch, Parkway Drive, Bring Me The Horizon, Trivium, Diablo Blvd.
@@ -32,14 +26,14 @@ $translated = array(
                 speel. Er komen dus vooral de zoete klanken van Bullet For My Valentine, Metallica, Crown The Empire, Papa Roach
                  en nog een berg andere artiesten uit mijn versterker.',
     'video' => '',
-    'h3' => array('klj','KLJ'),
+    'h3' => 'KLJ',
     'image' => '',
     'p5' => 'Zoals vele jongeren in dit land ben ik lid van een jeugdbeweging, namelijk KLJ Hamme-Center. Ondertussen ben ik 
      al vijf jaar lid en ik ben nog lang niet van plan om te stoppen.
                 Er is altijd een heleboel plezier te beleven bij elke activiteit, de sfeer zit altijd goed en de
                 band met mijn mede-KLJ\'ers, mijn vrienden, wordt er alleen maar sterker van. Kortom, je weet niet wat je mist als je
                 geen lid bent van een jeugdbeweging, en al zeker als het niet de KLJ is.',
-    'h4' => array('sport','Sport'),
+    'h4' => 'Sport',
     'p6' => 'Doorheen de jaren heb ik een aantal sporten uitgeoefend. Zo heb ik vijf jaar basketbal
                 gespeeld bij BBC Hamme, drie jaar gebadmintond bij BC Haminton en nog twee jaar gefitnessd. De
                 voornaamste redenen waarom ik met al deze sporten op een bepaald moment stopte, waren tijdsgebrek of het 
