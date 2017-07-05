@@ -4,8 +4,7 @@ include '../locale/' . $_SESSION["lang"] . '/' . basename($_SERVER["PHP_SELF"]);
 global $translated; ?>
         <div id="content">
             <picture>
-                <source srcset="../images/profile_full.jpg" media="(min-width: 480px)">
-                <img src="../images/profile_mobile.jpg" alt="picture of myself"/></picture>
+                <img src="../images/profile.jpg" alt="Mezelf"/></picture>
             <?php
             foreach ($translated as $key => $val) {
                 switch ($key) {

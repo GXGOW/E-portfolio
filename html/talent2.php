@@ -1,7 +1,6 @@
 <div id="content">
     <picture>
-        <source srcset="../images/doit_mobile.jpg" media="(max-width: 480px)">
-        <img src="../images/doit.jpg"/></picture>
+        <img src="../images/doit.png"/></picture>
     <p>Op deze pagina komen de verslagen van het OLOD I2Talent. Dit bouwt verder op I1Talent (zie hiervoor de
         desbetreffende pagina), maar nu gaan we op zoek naar waar we goed in zijn. </p>
 

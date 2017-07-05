@@ -18,13 +18,8 @@ global $translated; ?>
                         frameborder="0" allowfullscreen></iframe>
             </div>';break;
                     case $key === 'image':
-                        echo '<a href="../images/klj_full.jpg" target="_blank">
-                <picture>
-                    <source srcset="../images/klj_tab.jpg" media="(min-width: 480px)">
-                    <img src="../images/klj_mobile.jpg" alt="KLJ">
-                </picture>
-            </a>';break;
-
+                        echo '<picture><img src="../images/klj.jpg" alt="KLJ"></picture>';
+                        break;
                 }
             }
             ?>

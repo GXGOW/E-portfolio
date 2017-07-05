@@ -2,8 +2,7 @@
 
     <div id="content">
         <picture>
-            <source srcset="../images/doit_mobile.jpg" media="(max-width: 480px)">
-            <img src="../images/doit.jpg"/></picture>
+            <img src="../images/doit.png"/></picture>
         <p>Op deze pagina komen de verslagen van het OLOD I1Talent. Hierin gaan we op zoek naar onze verborgen talenten
             en zwaktes en leren we onszelf beter kennen. Aangezien we later, als we afgestudeerd zijn, allemaal zo goed
             als dezelfde competenties hebben, moeten we elk iets uniek hebben waarmee we kunnen uitblinken tegenover

@@ -18,7 +18,8 @@ global $translated; ?>
                         case ($key === 'figure1'):  echo '<figure><img src="../FeestBoek/images/logo_s.png" alt="Breaking Book logo"/>
                     <figcaption><a href="../FeestBoek/index.html" target="_blank">Breaking Book</a></figcaption></figure>';
                             break;
-                        case ($key === 'figure2'): echo '<figure><img src="../images/trump.jpg" alt="Our Lord and Führer Donald Trump"/>
+                        case ($key === 'figure2'):
+                            echo '<figure><img src="../images/trump.png" alt="Our Lord and Führer Donald Trump"/>
                     <figcaption><a href="html/trump.php" target="_blank">Small loan of a million dollars</a></figcaption></figure>';
                             break;
                         case ($key === 'figure3'): echo '<figure><img src="../images/RedAlert.png" alt="Red Alert KLJ Hamme"/>
