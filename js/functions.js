@@ -9,12 +9,15 @@ try {
 var isIE = /*@cc_on!@*/false || !!document.documentMode;
 var isMobile = screen.width <= 992;
 var mainView = {
+    slideout: null,
     init: function () {
         if (isIE) {
             this.showIEWarning();
         }
-        if (history.state != null)
+        if (history.state != null) {
             this.loadPage(history.state.page);
+            this.changeSelected($('#menu').find('a[href="#' + history.state.page + '"]'));
+        }
         else this.loadPage('index', true);
         this.initMenu();
         this.setTitle();
@@ -38,6 +41,9 @@ var mainView = {
                     initForm();
             }
             $('html, body').animate({scrollTop: '0px'}, 300);
+            if (isMobile) {
+                mainView.slideout.close();
+            }
             if (push) {
                 history.pushState({
                     page: page
@@ -53,7 +59,7 @@ var mainView = {
     },
 
     initMenu: function () {
-        var slideout = new Slideout({
+        this.slideout = new Slideout({
             'panel': document.getElementById('panel'),
             'menu': document.getElementById('menu'),
             'padding': 256,
@@ -61,7 +67,7 @@ var mainView = {
         });
 
         document.querySelector('.toggle-button').addEventListener('click', function () {
-            slideout.toggle();
+            mainView.slideout.toggle();
         });
         $("#menu").find("a").each(function (index, value) {
             $(this).addClass("ripple");
