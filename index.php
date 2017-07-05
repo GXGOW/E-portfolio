@@ -15,7 +15,6 @@ global $translated; ?>
 <div id="panel">
     <?php getHeader(); ?>
     <div id="main">
-
     </div>
     <?php getFooter() ?>
 </div>

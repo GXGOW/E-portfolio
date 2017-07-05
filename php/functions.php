@@ -65,8 +65,8 @@ function getScripts()
 
 function getMenu()
 {
-    global $prefix1, $prefix2, $transmenu;
-    include $prefix1 . 'locale/' . $_SESSION['lang'] . '/menu.php';
+    global $transmenu;
+    include 'locale/' . $_SESSION['lang'] . '/menu.php';
     echo
         '<nav id="menu">
         <ul>

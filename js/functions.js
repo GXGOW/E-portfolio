@@ -13,7 +13,9 @@ var mainView = {
         if (isIE) {
             this.showIEWarning();
         }
-        this.loadPage('index');
+        if (history.state != null)
+            this.loadPage(history.state.page);
+        else this.loadPage('index');
         this.initMenu();
         this.setTitle();
         this.setHeaderText();
@@ -36,6 +38,9 @@ var mainView = {
                     initForm();
             }
             $('html, body').animate({scrollTop: '0px'}, 300);
+            history.pushState({
+                page: page
+            }, '', page);
             mainView.setHeaderText();
             mainView.setTitle();
         });
@@ -67,13 +72,17 @@ var mainView = {
         $('#menu').find('a').each(function () {
             $(this).click(function (e) {
                 e.preventDefault();
-                $('.current').removeClass('current');
-                $(this).addClass('current');
+                mainView.changeSelected($(this));
                 if ($(this).attr('href')) {
                     mainView.loadPage($(this).attr('href').split('#')[1]);
                 }
             });
         });
+    },
+
+    changeSelected: function (elem) {
+        $('.current').removeClass('current');
+        $(elem).addClass('current');
     },
 
     setHeaderText: function () {
@@ -153,4 +162,13 @@ var mainView = {
 
 window.onload = function () {
     mainView.init();
+};
+
+window.onpopstate = function (event) {
+    var page = 'index';
+    if (event.state) {
+        page = event.state.page;
+    }
+    mainView.loadPage(page);
+    mainView.changeSelected($('#menu').find('a[href="#' + page + '"]'));
 };
