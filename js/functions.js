@@ -15,7 +15,7 @@ var mainView = {
         }
         if (history.state != null)
             this.loadPage(history.state.page);
-        else this.loadPage('index');
+        else this.loadPage('index', true);
         this.initMenu();
         this.setTitle();
         this.setHeaderText();
@@ -24,7 +24,7 @@ var mainView = {
         });
 
     },
-    loadPage: function (page) {
+    loadPage: function (page, push) {
         $('#main').load('html/' + page + '.php', function () {
             switch (page) {
                 case 'index':
@@ -38,9 +38,11 @@ var mainView = {
                     initForm();
             }
             $('html, body').animate({scrollTop: '0px'}, 300);
-            history.pushState({
-                page: page
-            }, '', page);
+            if (push) {
+                history.pushState({
+                    page: page
+                }, null, page);
+            }
             mainView.setHeaderText();
             mainView.setTitle();
         });
@@ -74,7 +76,7 @@ var mainView = {
                 e.preventDefault();
                 mainView.changeSelected($(this));
                 if ($(this).attr('href')) {
-                    mainView.loadPage($(this).attr('href').split('#')[1]);
+                    mainView.loadPage($(this).attr('href').split('#')[1], true);
                 }
             });
         });
