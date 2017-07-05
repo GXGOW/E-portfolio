@@ -39,7 +39,7 @@ $translated = array(
         'h' => 'Skills',
         'table' => array(
             'Programmer' => 'HTML, CSS, Javascript, jQuery, PHP, Java, SQL, C#',
-            'Créations IT' => '<a href="www.red-alert.be" target="_blank">Red Alert</a>',
+            'Créations IT' => '<a href="http://www.red-alert.be" target="_blank">Red Alert</a>',
             'Langues' => 'Niveau',
             'Néerlandais' => 'Langue maternelle',
             'Anglais' => 'Très fluide',
