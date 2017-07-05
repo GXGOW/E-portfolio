@@ -11,6 +11,7 @@ global $translated; ?>
 </head>
 
 <body>
+<noscript>Your browser does not support Javascript.</noscript>
 <?php getMenu(); ?>
 <div id="panel">
     <?php getHeader(); ?>
@@ -20,5 +21,4 @@ global $translated; ?>
 </div>
 <?php getScripts(); ?>
 </body>
-
 </html>

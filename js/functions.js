@@ -6,13 +6,13 @@ try {
 } catch (e) {
 }
 
-var isIE = /*@cc_on!@*/false || !!document.documentMode;
+var isIE = !!window.MSInputMethodContext && !!document.documentMode;
 var isMobile = screen.width <= 992;
 var mainView = {
     slideout: null,
     init: function () {
         if (isIE) {
-            this.showIEWarning();
+            this.redirectIE();
         }
         if (history.state != null) {
             this.loadPage(history.state.page);
@@ -163,8 +163,8 @@ var mainView = {
         }
     },
 
-    showIEWarning: function () {
-        //TODO: Functie schrijven die IE-gebruikers enorm neig kloot of waarschuwt fzo
+    redirectIE: function () {
+        window.location = 'html/lap.html';
     }
 };
 
