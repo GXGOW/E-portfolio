@@ -12,30 +12,17 @@ if ($_SERVER['SERVER_NAME'] == 'localhost') {
 if (!isset($_SESSION['lang'])) {
     setLang("nl_BE");
 }
-$prefix1;
-$prefix2;
-if ((basename($_SERVER["PHP_SELF"])) === "index.php") {
-    $prefix1 = "";
-    $prefix2 = "html/";
-} else {
-    $prefix1 = "../";
-    $prefix2 = "";
-}
 
 function getHead()
 {
-    global $prefix1, $dev;
+    global $dev;
     $links = ($dev ?
-        '<link href="' . $prefix1 . 'node_modules/reset-css/reset.css" rel="stylesheet"/>
-        <link href="' . $prefix1 . 'node_modules/font-awesome/css/font-awesome.css" rel="stylesheet"/>
-        <link href="' . $prefix1 . 'css/styles.css" rel="stylesheet"/>
-        <link href="' . $prefix1 . 'node_modules/css-ripple-effect/dist/ripple.css" rel="stylesheet"/>
-        '
+        '<link href="node_modules/reset-css/reset.css" rel="stylesheet"/>
+        <link href="node_modules/font-awesome/css/font-awesome.css" rel="stylesheet"/>
+        <link href="css/styles.css" rel="stylesheet"/>
+        <link href="node_modules/css-ripple-effect/dist/ripple.css" rel="stylesheet"/>'
         :
-        '<link href="' . $prefix1 . 'build/reset.css" rel="stylesheet"/>
-    <link href="' . $prefix1 . 'build/font-awesome/css/font-awesome.min.css" rel="stylesheet"/>
-    <link href="' . $prefix1 . 'build/styles.min.css" rel="stylesheet"/>
-    <link href="' . $prefix1 . 'build/ripple.min.css" rel="stylesheet"/>');
+        '');
     echo '<meta charset="UTF-8">
     <link rel="icon" sizes="512x512" href="images/icon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=yes">
@@ -49,18 +36,20 @@ function getHead()
 
 function getScripts()
 {
-    global $prefix1, $dev;
+    global $dev;
     $scripts = $dev ?
-        '<script src="' . $prefix1 . 'node_modules/jquery/dist/jquery.js"></script>
-        <script src="' . $prefix1 . 'node_modules/slideout/dist/slideout.js"></script>
-        <script src="' . $prefix1 . 'node_modules/jquery-validation/dist/jquery.validate.js"></script>
-        <script src="' . $prefix1 . 'js/jquery.slides.js"></script>
-        <script src="' . $prefix1 . 'js/functions.js"></script>
-        <script src="' . $prefix1 . 'js/form.js"></script>
-        <script src="' . $prefix1 . 'js/trump.js"></script>
+        '<script src="node_modules/jquery/dist/jquery.js"></script>
+        <script src="node_modules/slideout/dist/slideout.js"></script>
+        <script src="node_modules/jquery-validation/dist/jquery.validate.js"></script>
+        <script src="node_modules/headroom.js/dist/headroom.js"></script>
+        <script src="node_modules/headroom.js/dist/jQuery.headroom.js"></script>
+        <script src="js/jquery.slides.js"></script>
+        <script src="js/functions.js"></script>
+        <script src="js/form.js"></script>
+        <script src="js/trump.js"></script>
         '
         :
-        '<script src="' . $prefix1 . 'build/functions.min.js"></script>';
+        '<script src="build/functions.min.js"></script>';
     echo $scripts;
 }
 
@@ -90,7 +79,6 @@ function getMenu()
 
 function getHeader()
 {
-    global $prefix1;
     echo
     '<header>
         <button class="toggle-button">

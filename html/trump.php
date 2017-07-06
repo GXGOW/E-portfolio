@@ -14,7 +14,7 @@ global $translated; ?>
     <!-- iOS colored statusbar -->
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="#187ab2">
-    <link href="../build/trump.min.css" rel="stylesheet">
+    <link href="../build/trump/trump.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Exo" rel="stylesheet">
     <title>Trump</title>
 </head>
@@ -25,7 +25,6 @@ global $translated; ?>
     <img src="../images/sadtrump.jpg" id="trump" alt="Mad Trump"/>
             <audio id="audio" src="" />
         </div>
-<?php getScripts(); ?>
+<script src="../build/trump/trump.min.js"></script>
 </body>
-
 </html>
