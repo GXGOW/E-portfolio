@@ -2,7 +2,19 @@ try {
     window.$.validate = window.jQuery.validate = require('jquery-validation');
 } catch (e) {
 }
-var requiredmessage = "Gelieve dit veld in te vullen";
+var errors;
+
+function getMessages() {
+    $.ajax({
+        url: "php/validationMsg.php",
+        type: 'GET',
+        dataType: 'json',
+        success: function (data) {
+            errors = data;
+            initForm();
+        }
+    });
+}
 
 function initForm() {
     $('#form').submit(function (e) {
@@ -34,16 +46,16 @@ function initForm() {
             },
             messages: {
                 naam: {
-                    required: requiredmessage,
-                    minlength: "Gelieve een geldige naam in te vullen"
+                    required: errors['required'],
+                    minlength: errors['minlengthLN']
                 },
                 voornaam: {
-                    required: requiredmessage,
-                    minlength: "Gelieve een geldige voornaam in te vullen"
+                    required: errors['required'],
+                    minlength: errors['minlengthFN']
                 },
-                email: "Gelieve een geldig e-mailadres in te vullen",
-                onderwerp: requiredmessage,
-                bericht: requiredmessage
+                email: errors['email'],
+                onderwerp: errors['required'],
+                bericht: errors['required']
             }
         })
     })

@@ -41,7 +41,7 @@ var mainView = {
                     mainView.initAssignments();
                     break;
                 case 'contact':
-                    initForm();
+                    getMessages();
             }
             $('html, body').animate({scrollTop: '0px'}, 300);
             if (isMobile) {
@@ -132,12 +132,8 @@ var mainView = {
     },
 
     changeLocale: function (locale) {
-        var title = location.pathname.split('/').slice(-1)[0];
-        var prefix = "../";
-        if (title === "" || title === 'index.php')
-            prefix = "";
         $.ajax({
-            url: prefix + "php/changeLocale.php",
+            url: "php/changeLocale.php",
             type: 'post',
             data: {'newLang': locale},
             success: function () {

@@ -4,7 +4,7 @@ include '../locale/' . $_SESSION["lang"] .'/'.basename($_SERVER["PHP_SELF"]);
 global $translated; ?>
         <div id="content">
             <?php
-                //TODO locales foutmeldingen + functionaliteit achter die knop steken
+            //TODO Functionaliteit achter die knop steken
                 echo '<form id="form" action="">
                         <label for="naam">'.$translated[0].'</label>
                         <input type="text" name="naam" placeholder="&#xf007;">
