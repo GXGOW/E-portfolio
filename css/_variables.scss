@@ -1,5 +1,8 @@
 @import url(https://fonts.googleapis.com/css?family=Exo);
 @import url(https://fonts.googleapis.com/css?family=Tienne:400,900);
+@import url('../node_modules/reset-css/reset.css');
+@import url('../build/font-awesome/css/font-awesome.min.css');
+@import url('../node_modules/css-ripple-effect/dist/ripple.min.css');
 $orange: #ffa022;
 $dorito: #b26600;
 $bg: #e1dfe9;
@@ -13,3 +16,4 @@ Arial,
 sans-serif;
 $header: Tienne,
 sans-serif;
+$transition: .3s ease-in-out;

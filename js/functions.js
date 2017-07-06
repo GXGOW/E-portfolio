@@ -3,6 +3,8 @@ try {
     window.jQuery = window.$ = require('jquery');
     window.Slideout = require('slideout');
     window.slidesjs = require('../js/jquery.slides');
+    window.Headroom = require('headroom.js');
+    window.$.headroom = require('headroom.js/dist/jQuery.headroom');
 } catch (e) {
 }
 
@@ -11,9 +13,7 @@ var isMobile = screen.width <= 992;
 var mainView = {
     slideout: null,
     init: function () {
-        if (isIE) {
-            this.redirectIE();
-        }
+        if (isIE) this.redirectIE();
         if (history.state != null) {
             this.loadPage(history.state.page);
             this.changeSelected($('#menu').find('a[href="#' + history.state.page + '"]'));
@@ -22,6 +22,9 @@ var mainView = {
         this.initMenu();
         this.setTitle();
         this.setHeaderText();
+        if (isMobile) {
+            $('header').headroom();
+        }
         $("#langswitch").change(function () {
             mainView.changeLocale($("#langswitch").val());
         });
@@ -69,7 +72,7 @@ var mainView = {
         document.querySelector('.toggle-button').addEventListener('click', function () {
             mainView.slideout.toggle();
         });
-        $("#menu").find("a").each(function (index, value) {
+        $("#menu").find("a").each(function () {
             $(this).addClass("ripple");
         });
 
@@ -91,6 +94,8 @@ var mainView = {
     changeSelected: function (elem) {
         $('.current').removeClass('current');
         $(elem).addClass('current');
+        (($(elem).attr('href') || $(elem).parent().attr('id') === 'list') && !($(elem).attr('href').indexOf('talent') >= 0)) ? $('#list').next().slideUp(500)
+            : $('#list').next().slideDown();
     },
 
     setHeaderText: function () {
@@ -118,7 +123,7 @@ var mainView = {
                 pauseOnHover: true
             },
             callback: {
-                loaded: function (number) {
+                loaded: function () {
                     $("#slides").show();
                     $("#slides").find("i").hide();
                 }
@@ -135,7 +140,7 @@ var mainView = {
             url: prefix + "php/changeLocale.php",
             type: 'post',
             data: {'newLang': locale},
-            success: function (response) {
+            success: function () {
                 location.reload();
             }
         });
