@@ -20,9 +20,10 @@ function getHead()
         '<link href="node_modules/reset-css/reset.css" rel="stylesheet"/>
         <link href="node_modules/font-awesome/css/font-awesome.css" rel="stylesheet"/>
         <link href="css/styles.css" rel="stylesheet"/>
-        <link href="node_modules/css-ripple-effect/dist/ripple.css" rel="stylesheet"/>'
+        <link href="node_modules/css-ripple-effect/dist/ripple.css" rel="stylesheet"/>
+        '
         :
-        '');
+        '<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />');
     echo '<meta charset="UTF-8">
     <link rel="icon" sizes="512x512" href="images/icon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=yes">
@@ -36,20 +37,41 @@ function getHead()
 
 function getScripts()
 {
-    global $dev;
+    global $dev, $cookie;
+    include 'locale/' . $_SESSION['lang'] . '/cookie.php';
     $scripts = $dev ?
         '<script src="node_modules/jquery/dist/jquery.js"></script>
         <script src="node_modules/slideout/dist/slideout.js"></script>
         <script src="node_modules/jquery-validation/dist/jquery.validate.js"></script>
         <script src="node_modules/headroom.js/dist/headroom.js"></script>
         <script src="node_modules/headroom.js/dist/jQuery.headroom.js"></script>
+        <script src="node_modules/jquery-form/dist/jquery.form.min.js"></script>
         <script src="js/jquery.slides.js"></script>
         <script src="js/functions.js"></script>
         <script src="js/form.js"></script>
-        <script src="js/trump.js"></script>
         '
         :
-        '<script src="build/functions.min.js"></script>';
+        '<script src="build/functions.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
+        <script>
+        window.addEventListener("load", function(){
+        window.cookieconsent.initialise({
+            "palette": {
+                "popup": {
+                    "background": "#0c537a"
+                },
+                "button": {
+                    "background": "#ffa022"
+                }
+            },
+            "content": {
+                "message": "' . $cookie[0] . '",
+                "link": "' . $cookie[1] . '",
+                "dismiss": "OK"
+            }
+        })});
+        </script>
+        ';
     echo $scripts;
 }
 
