@@ -5,6 +5,7 @@ try {
     window.slidesjs = require('../js/jquery.slides');
     window.Headroom = require('headroom.js');
     window.$.headroom = require('headroom.js/dist/jQuery.headroom');
+    window.$.ajaxForm = require('jquery-form');
 } catch (e) {
 }
 

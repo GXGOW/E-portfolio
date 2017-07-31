@@ -17,8 +17,36 @@ function getMessages() {
 }
 
 function initForm() {
+    $('#form').ajaxForm();
     $('#form').submit(function (e) {
         e.preventDefault();
+        $(this).ajaxSubmit({
+            url: '../php/form.php',
+            type: 'post',
+            success: function (data) {
+                if (data !== 'success') {
+                    var err;
+                    switch (data) {
+                        case 'err_captcha':
+                            err = errors['captcha'];
+                            break;
+                        case 'err_email':
+                            err = errors['email'];
+                            break;
+                        case 'err_null':
+                            err = errors['required'];
+                            break;
+                    }
+                    $('#err').append('<p class="error">' + err + '</p>');
+                }
+                $('#err').fadeOut(500);
+                $('#form').fadeOut(500, function () {
+                    $('#content').empty();
+                    $('#content').append('<p class="success">Het formulier werd met succes ingediend!</p>');
+                    $('.success').fadeIn(500);
+                });
+            }
+        });
     });
     $(function () {
         $("#form").validate({
