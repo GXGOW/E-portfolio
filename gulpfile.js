@@ -21,8 +21,12 @@ gulp.task('default', ['watch-sass', 'bundle']);
 const params = {
     entries: ['js/css.js', 'js/functions.js', 'js/form.js'],
     debug: true,
+    global: true,
     transform: [
-        ['browserify-css']
+        ['browserify-css', {
+            rebaseUrls: true,
+            rootDir: '.'
+        }]
     ],
 };
 const opts = assign({}, watchify.args, params);
@@ -39,37 +43,21 @@ function bundle() {
         .pipe(buffer())
         // Add transformation tasks to the pipeline here.
         .pipe(uglifyjs())
-        .on('error', function (err) {
+        .on('error', function(err) {
             gutil.log(gutil.colors.red('[Error]'), err.toString());
         })
         .pipe(sourcemaps.write('./')) // writes .map file
         .pipe(gulp.dest(DEST));
 }
 
-gulp.task('minify-css', () =>
-    gulp.src('css/*.css')
-        .pipe(cleanCSS())
-        .pipe(rename({ extname: '.min.css' }))
-        .pipe(gulp.dest(DEST))
-);
-
 gulp.task('sass', () =>
-        sass('css/styles.scss')
-        .on('error', gutil.log.bind(gutil, 'Sass Error'))
-        .pipe(gulp.dest('css/'))
-        .pipe(filter('**/*.css'))
+    sass('css/styles.scss')
+    .on('error', gutil.log.bind(gutil, 'Sass Error'))
+    .pipe(gulp.dest('css/'))
+    .pipe(filter('**/*.css'))
 
 );
 
 gulp.task('watch-sass', () =>
     gulp.watch('css/**/*.scss', ['sass'])
 );
-
-gulp.task('minify-watch', () =>
-    gulp.watch('css/**/*.css', ['minify-css'])
-);
-
-gulp.task('node-css', () => {
-    gulp.src('node_modules/font-awesome/*/*')
-            .pipe(gulp.dest(DEST + '/font-awesome'))
-});
