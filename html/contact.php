@@ -35,7 +35,7 @@ switch($_SESSION["lang"]){
         case 'fr_FR': $lang= 'fr';break;
         case 'nl_BE':$lang= 'nl';break;
     }
-    echo '<script src="https://www.google.com/recaptcha/api.js?onload=callback&render=explicit&hl='.$lang.' async defer">
+    echo '<script src="https://www.google.com/recaptcha/api.js?onload=callback&render=explicit&hl='.$lang.'" async defer>
     </script>
     <script>
     var callback = function() {
