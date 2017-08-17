@@ -8,13 +8,11 @@ try {
     window.$.headroom = require('headroom.js/dist/jQuery.headroom');
 } catch (e) {}
 
-var callback = null;
 var isIE = !!window.MSInputMethodContext && !!document.documentMode;
 var isMobile = screen.width <= 992;
 var mainView = {
     slideout: null,
     init: function() {
-        if (isIE) this.redirectIE();
         if (history.state != null) {
             this.loadPage(history.state.page);
             this.changeSelected($('#menu').find('a[href="#' + history.state.page + '"]'));
@@ -162,10 +160,6 @@ var mainView = {
             });
         }
     },
-
-    redirectIE: function() {
-        window.location = 'html/lap.html';
-    }
 };
 
 var formView = {
@@ -261,6 +255,9 @@ var formView = {
 }
 
 window.onload = function() {
+    if (isIE) {
+        window.location = 'html/lap.html';
+    }
     mainView.init();
 };
 
