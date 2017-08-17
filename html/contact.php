@@ -6,7 +6,7 @@ global $translated; ?>
             <div id="err" class="error"></div>
             <?php
                 echo '<form id="form" action="">
-                        <label for="">' . $translated[0] . '</label>
+                        <label for="naam">' . $translated[0] . '</label>
                         <input type="text" name="naam" placeholder="&#xf007;">
 
                         <label for="voornaam">'.$translated[1].'</label>
@@ -27,14 +27,21 @@ global $translated; ?>
                 </form>';
               ?>
         </div>
-<script>var callback = function () {
-        grecaptcha.render('recaptcha', {
-            sitekey: '6LfYMSgUAAAAALcc3671CX_4qKW-nPTqACdgDgr2',
-            callback: function () {
-                console.log('callback');
-            }
+
+<?php
+$lang;
+switch($_SESSION["lang"]){
+        case 'en_GB': $lang= 'en';break;
+        case 'fr_FR': $lang= 'fr';break;
+        case 'nl_BE':$lang= 'nl';break;
+    }
+    echo '<script src="https://www.google.com/recaptcha/api.js?onload=callback&render=explicit&hl='.$lang.' async defer">
+    </script>
+    <script>
+    var callback = function() {
+        grecaptcha.render("recaptcha", {
+            sitekey: "6LfYMSgUAAAAALcc3671CX_4qKW-nPTqACdgDgr2"
         });
-    }</script>
-<script src="https://www.google.com/recaptcha/api.js?onload=callback&render=explicit"
-        async defer>
-</script>
+    }
+    </script>'
+?>

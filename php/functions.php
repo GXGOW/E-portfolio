@@ -27,9 +27,7 @@ function getHead()
     echo '<meta charset="UTF-8">
     <link rel="icon" sizes="512x512" href="images/icon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=yes">
-    <!-- Android Chrome colored statusbar -->
     <meta name="theme-color" content="#187ab2">
-    <!-- iOS colored statusbar -->
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="#187ab2">'
         . $links;
@@ -45,10 +43,8 @@ function getScripts()
         <script src="node_modules/jquery-validation/dist/jquery.validate.js"></script>
         <script src="node_modules/headroom.js/dist/headroom.js"></script>
         <script src="node_modules/headroom.js/dist/jQuery.headroom.js"></script>
-        <script src="node_modules/jquery-form/dist/jquery.form.min.js"></script>
         <script src="js/jquery.slides.js"></script>
         <script src="js/functions.js"></script>
-        <script src="js/form.js"></script>
         '
         :
         '<script src="build/functions.min.js"></script>

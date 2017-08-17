@@ -1,50 +1,50 @@
 //Nodejs dependencies (try/catch constructie dient om webbrowser gerust te stellen)
 try {
     window.jQuery = window.$ = require('jquery');
+    window.$.validate = window.jQuery.validate = require('jquery-validation');
     window.Slideout = require('slideout');
-    window.slidesjs = require('../js/jquery.slides');
+    window.slidesjs = require('../js/jquery.slides.js');
     window.Headroom = require('headroom.js');
     window.$.headroom = require('headroom.js/dist/jQuery.headroom');
-    window.$.ajaxForm = require('jquery-form');
-} catch (e) {
-}
+} catch (e) {}
 
+var callback = null;
 var isIE = !!window.MSInputMethodContext && !!document.documentMode;
 var isMobile = screen.width <= 992;
 var mainView = {
     slideout: null,
-    init: function () {
+    init: function() {
         if (isIE) this.redirectIE();
         if (history.state != null) {
             this.loadPage(history.state.page);
             this.changeSelected($('#menu').find('a[href="#' + history.state.page + '"]'));
-        }
-        else this.loadPage('index', true);
+        } else this.loadPage('index', true);
         this.initMenu();
         this.setTitle();
         this.setHeaderText();
         if (isMobile) {
             $('header').headroom();
         }
-        $("#langswitch").change(function () {
+        $("#langswitch").change(function() {
             mainView.changeLocale($("#langswitch").val());
         });
 
     },
-    loadPage: function (page, push) {
-        $('#main').load('html/' + page + '.php', function () {
+    loadPage: function(page, push) {
+        $('#main').load('html/' + page + '.php', function() {
             switch (page) {
                 case 'index':
                     mainView.initSlides();
                     break;
                 case 'talent1':
-                case'talent2':
+                case 'talent2':
                     mainView.initAssignments();
                     break;
                 case 'contact':
-                    getMessages();
+                    formView.getErrorMessages();
+                    break;
             }
-            $('html, body').animate({scrollTop: '0px'}, 300);
+            $('html, body').animate({ scrollTop: '0px' }, 300);
             if (isMobile) {
                 mainView.slideout.close();
             }
@@ -58,11 +58,11 @@ var mainView = {
         });
     },
 
-    setTitle: function () {
+    setTitle: function() {
         $("title").text($(".current").text() + " - Nicolas' e-portfolio")
     },
 
-    initMenu: function () {
+    initMenu: function() {
         this.slideout = new Slideout({
             'panel': document.getElementById('panel'),
             'menu': document.getElementById('menu'),
@@ -70,19 +70,19 @@ var mainView = {
             'tolerance': 70
         });
 
-        document.querySelector('.toggle-button').addEventListener('click', function () {
+        document.querySelector('.toggle-button').addEventListener('click', function() {
             mainView.slideout.toggle();
         });
-        $("#menu").find("a").each(function () {
+        $("#menu").find("a").each(function() {
             $(this).addClass("ripple");
         });
 
-        $("#list").click(function () {
+        $("#list").click(function() {
             $(this).next().slideToggle(500);
         });
 
-        $('#menu').find('a').each(function () {
-            $(this).click(function (e) {
+        $('#menu').find('a').each(function() {
+            $(this).click(function(e) {
                 e.preventDefault();
                 mainView.changeSelected($(this));
                 if ($(this).attr('href')) {
@@ -92,20 +92,19 @@ var mainView = {
         });
     },
 
-    changeSelected: function (elem) {
+    changeSelected: function(elem) {
         $('.current').removeClass('current');
         $(elem).addClass('current');
-        (($(elem).attr('href') || $(elem).parent().attr('id') === 'list') && !($(elem).attr('href').indexOf('talent') >= 0)) ? $('#list').next().slideUp(500)
-            : $('#list').next().slideDown();
+        (($(elem).attr('href') || $(elem).parent().attr('id') === 'list') && !($(elem).attr('href').indexOf('talent') >= 0)) ? $('#list').next().slideUp(500): $('#list').next().slideDown();
     },
 
-    setHeaderText: function () {
+    setHeaderText: function() {
         if (isMobile) {
             $("#title").text($(".current").text());
         }
     },
 
-    initSlides: function () {
+    initSlides: function() {
         $("#slides").slidesjs({
             width: 1500,
             height: 400,
@@ -124,7 +123,7 @@ var mainView = {
                 pauseOnHover: true
             },
             callback: {
-                loaded: function () {
+                loaded: function() {
                     $("#slides").show();
                     $("#slides").find("i").hide();
                 }
@@ -132,49 +131,140 @@ var mainView = {
         });
     },
 
-    changeLocale: function (locale) {
+    changeLocale: function(locale) {
         $.ajax({
             url: "php/changeLocale.php",
             type: 'post',
-            data: {'newLang': locale},
-            success: function () {
+            data: { 'newLang': locale },
+            success: function() {
                 location.reload();
             }
         });
     },
 
-    initAssignments: function () {
-        $("#assSelect").change(function () {
+    initAssignments: function() {
+        $("#assSelect").change(function() {
             mainView.loadAssignment($("#assSelect").val());
         });
     },
 
-    loadAssignment: function (ass) {
+    loadAssignment: function(ass) {
         if (ass !== "") {
-            $("#verslag").slideUp(300, function () {
+            $("#verslag").slideUp(300, function() {
                 var folder = $('.current').attr('href').split('#')[1];
-                $("#verslag").load('html/' + folder + "/" + ass + ".html", function () {
+                $("#verslag").load('html/' + folder + "/" + ass + ".html", function() {
                     $("#verslag").slideDown();
                 });
             });
-        }
-        else {
-            $("#verslag").slideUp(300, function () {
+        } else {
+            $("#verslag").slideUp(300, function() {
                 $("#verslag").empty();
             });
         }
     },
 
-    redirectIE: function () {
+    redirectIE: function() {
         window.location = 'html/lap.html';
     }
 };
 
-window.onload = function () {
+var formView = {
+    errors: null,
+    getErrorMessages: function() {
+        $.ajax({
+            url: "php/validationMsg.php",
+            type: 'GET',
+            dataType: 'json',
+            success: function(data) {
+                formView.errors = data;
+                formView.initForm();
+            }
+        });
+    },
+    initForm: function() {
+        $.getScript('https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.2.2/jquery.form.min.js', function() {
+            $('#form').ajaxForm({
+                beforeSubmit: function() {
+                    $('#form').validate();
+                }
+            });
+        });
+        $(function() {
+            $("#form").validate({
+                rules: {
+                    naam: {
+                        required: true,
+                        minlength: 2
+                    },
+                    voornaam: {
+                        required: true,
+                        minlength: 2
+                    },
+                    email: {
+                        required: true,
+                        email: true
+                    },
+                    onderwerp: {
+                        required: true,
+                        minlength: 3
+                    },
+                    bericht: {
+                        required: true,
+                        minlength: 20
+                    }
+                },
+                messages: {
+                    naam: {
+                        required: formView.errors['required'],
+                        minlength: formView.errors['minlengthLN']
+                    },
+                    voornaam: {
+                        required: formView.errors['required'],
+                        minlength: formView.errors['minlengthFN']
+                    },
+                    email: formView.errors['email'],
+                    onderwerp: formView.errors['required'],
+                    bericht: formView.errors['required']
+                },
+                submitHandler: function() {
+                    $('#form').ajaxSubmit({
+                        url: '../php/form.php',
+                        type: 'post',
+                        success: function(data) {
+                            if (data !== 'success') {
+                                var err;
+                                switch (data) {
+                                    case 'err_captcha':
+                                        err = formView.errors['captcha'];
+                                        break;
+                                    case 'err_email':
+                                        err = formView.errors['email'];
+                                        break;
+                                    case 'err_null':
+                                        err = formView.errors['required'];
+                                        break;
+                                }
+                                $('#err').append('<p class="error">' + err + '</p>');
+                            }
+                            $('#err').fadeOut(500);
+                            $('#form').fadeOut(500, function() {
+                                $('#content').empty();
+                                $('#content').append('<p class="success">Het formulier werd met succes ingediend!</p>');
+                                $('.success').fadeIn(500);
+                            });
+                        }
+                    });
+                }
+            })
+        });
+    }
+}
+
+window.onload = function() {
     mainView.init();
 };
 
-window.onpopstate = function (event) {
+window.onpopstate = function(event) {
     var page = 'index';
     if (event.state) {
         page = event.state.page;
