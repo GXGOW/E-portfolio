@@ -6,14 +6,14 @@
  * Time: 22:26
  */
 $translated = array(
-        'portfolio1' => array(
+        'BreakingBook' => array(
             'Het project \'Feesboek\' was ons eerste project binnen Webapplicaties I. Hier leerden we om stap voor stap 
             in HTML en CSS websites op te bouwen. Na elke les hadden we de kans om telkens weer
                         een nieuw stukje uit die les te implementeren in deze website. Ik heb ervoor
                         gekozen om die website in de stijl van Breaking Bad te maken, omdat ik toen een enorme fan
                         was van die serie.'
         ),
-    'portfolio2' => array(
+    'trump' => array(
             'Bij het OLOD Webapplicaties II leerden we de programmeertaal Javascript. Hiermee
                         kunnen interacties binnen een website mogelijk gemaakt worden. Dit is een klein projectje dat ik zelf
                         gemaakt heb om de basis ervan in te oefenen, en om het wat ludiek te maken, heb ik er onze goede
@@ -22,7 +22,7 @@ $translated = array(
             'Wat deze kleine applicatie doet, is simpel. Klik of tik op de afbeelding en Trump spreekt een willekeurige
              fameuze uitspraak uit.'
     ),
-    'portfolio3' => array(
+    'RedAlert' => array(
         'KLJ Hamme-Center, waar ik lid van ben, organiseert ondertussen al enkele jaren jaarlijks de fuif Red
                         Alert. Deze is ondertussen uitgegroeid tot een
                         van de grootste en beste fuiven van Hamme. Een fuif heeft natuurlijk publiciteit nodig, en dat

@@ -6,13 +6,13 @@
  * Time: 22:26
  */
 $translated=array(
-    'portfolio1' => array(
+    'BreakingBook' => array(
             'Le projet \'Feesboek\' était un des premiers projets de cours Applications Web I. Ici, nous apprenions 
             de graduellement construire des sites avec HTML et CSS. Après chaque leçon, nous avions l\'occasion d\' implémenter
             une nouveau fragment dans ce site. J\'ai choici le style de Breaking Bad, parce que dans le temps
              j\'étais un grand fan de cette série télévisée.'
     ),
-    'portfolio2' => array(
+    'trump' => array(
             'Pendant les cours de Applications Web II, nous apprenions le langage informatique Javascript.
             Avec cela, on peut faciliter des interactions dans le site. Ceci est un petit project que j\'ai construit 
             pour s\'exercer la base de Javascript. Pour le rendre plus amusant, j\'ai impliqué notre ami Donald Trump.
@@ -20,7 +20,7 @@ $translated=array(
             'Qu\'est-ce que cette petite application fait? C\'est simple: Cliquez sur Trump et il dit un de ses 
              citations fameuses.'
     ),
-    'portfolio3' => array(
+    'RedAlert' => array(
             'KLJ Hamme-Center, dont je suis membre, organise depuis quelques années chaque année 
             la party Red Alert. Maintenant, c\'est un des plus grandes et meilleures partys de Hamme. Évidemment, une party
             a besoin de la publicité, et cela est possible à l\'aide des médias sociaux et aussi d\'un site. Entre-temps, 

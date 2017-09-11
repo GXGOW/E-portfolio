@@ -281,15 +281,14 @@ a {
 
 /* Portfolio */
 #projects {
-  text-align: center;
   display: flex;
   justify-content: center;
   align-items: center; }
   #projects img {
     min-width: initial;
     max-width: initial;
-    width: 70px;
-    height: 70px; }
+    width: 50px;
+    height: 50px; }
   #projects #scroller {
     width: 330px;
     overflow: hidden;
@@ -298,17 +297,17 @@ a {
     align-items: center;
     border: 5px solid black;
     border-radius: 25px;
-    padding-left: 20px;
-    padding-right: 20px; }
+    padding-left: 10px;
+    padding-right: 10px; }
     #projects #scroller figure {
-      width: 70px;
-      height: 70px;
+      width: 50px;
+      height: 50px;
       margin-right: 40px;
       display: block; }
       #projects #scroller figure:first-of-type {
-        margin-left: 20px; }
+        margin-left: 10px; }
       #projects #scroller figure:last-of-type {
-        padding-right: 60px; }
+        padding-right: 20px; }
       #projects #scroller figure a {
         filter: grayscale(100%);
         line-height: initial;

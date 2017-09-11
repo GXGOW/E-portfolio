@@ -11,17 +11,12 @@ global $translated; ?>
             $id=1;
             foreach ($projects as $img) {
                 $alt = explode('.',explode('/',$img)[3])[0];
-                for($i=0; $i < 3; $i++){
-                    echo '<figure><a id="portfolio'.$id.'"><img src="'.$img.'" alt="'.$alt.'"></a></figure>';
-                    $id++;                    
-                }
+                echo '<figure><a id="'.$alt.'"><img src="'.$img.'" alt="'.$alt.'"></a></figure>';
+                $id++;                    
             }
             ?>
             </div>
             <img id="right" src="../images/next.svg" />
         </div>
-
-        <div id="description">
-
-        </div>
+        <div id="description"></div>
     </div>

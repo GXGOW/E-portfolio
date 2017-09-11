@@ -184,10 +184,10 @@ var mainView = {
             });
         });
         $('#left').click(function() {
-            $('#scroller').scrollLeft($('#scroller').scrollLeft() - 330);
+            $('#scroller').animate({ scrollLeft: $('#scroller').scrollLeft() - 330 }, 500);
         });
         $('#right').click(function() {
-            $('#scroller').scrollLeft(330 + $('#scroller').scrollLeft());
+            $('#scroller').animate({ scrollLeft: 330 + $('#scroller').scrollLeft() }, 500);
         });
     }
 };
