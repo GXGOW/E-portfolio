@@ -12,6 +12,7 @@ var isIE = !!window.MSInputMethodContext && !!document.documentMode;
 var isMobile = screen.width <= 992;
 var mainView = {
     slideout: null,
+    projpage: 1,
     init: function() {
         if (history.state != null) {
             this.loadPage(history.state.page);
@@ -38,8 +39,13 @@ var mainView = {
                 case 'talent2':
                     mainView.initAssignments();
                     break;
+                case 'portfolio':
+                    mainView.initProjects();
+                    break;
                 case 'contact':
                     formView.getErrorMessages();
+                    break;
+                default:
                     break;
             }
             $('html, body').animate({ scrollTop: '0px' }, 300);
@@ -160,6 +166,30 @@ var mainView = {
             });
         }
     },
+
+    initProjects: function() {
+        this.projpage = 1;
+        $('#projects').find('a').click(function() {
+            $('#projects').find('a').not(this).removeAttr('style');
+            $(this).css('opacity', '1').css('filter', 'initial');
+            $.ajax({
+                url: "php/getProject.php",
+                type: 'GET',
+                data: { 'project': $(this).attr('id') },
+                dataType: 'json',
+                success: function(response) {
+                    $('#description').html(response);
+                    $('#description').fadeIn(1000);
+                }
+            });
+        });
+        $('#left').click(function() {
+            $('#scroller').scrollLeft($('#scroller').scrollLeft() - 330);
+        });
+        $('#right').click(function() {
+            $('#scroller').scrollLeft(330 + $('#scroller').scrollLeft());
+        });
+    }
 };
 
 var formView = {
