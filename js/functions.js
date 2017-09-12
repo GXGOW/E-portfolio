@@ -168,27 +168,45 @@ var mainView = {
     },
 
     initProjects: function() {
-        this.projpage = 1;
+        $('#description').find('p:first-of-type').show();
         $('#projects').find('a').click(function() {
+            var current = $(this);
             $('#projects').find('a').not(this).removeAttr('style');
-            $(this).css('opacity', '1').css('filter', 'initial');
+            current.css('filter', 'initial');
+            $('#description').slideUp();
+            $('#description').children().fadeOut(500);
             $.ajax({
                 url: "php/getProject.php",
                 type: 'GET',
-                data: { 'project': $(this).attr('id') },
+                data: { 'project': current.attr('id') },
                 dataType: 'json',
                 success: function(response) {
                     $('#description').html(response);
-                    $('#description').fadeIn(1000);
+                    $('#description').children().fadeIn(500);
+                    $('#description').slideDown();
                 }
             });
+
         });
-        $('#left').click(function() {
-            $('#scroller').animate({ scrollLeft: $('#scroller').scrollLeft() - 330 }, 500);
-        });
-        $('#right').click(function() {
-            $('#scroller').animate({ scrollLeft: 330 + $('#scroller').scrollLeft() }, 500);
-        });
+        if (isMobile) {
+            $('#left').click(function() {
+                $('#scroller').animate({ scrollLeft: $('#scroller').scrollLeft() - 290 }, 500);
+            });
+            $('#right').click(function() {
+                $('#scroller').animate({ scrollLeft: 290 + $('#scroller').scrollLeft() }, 500);
+            });
+        } else {
+            $('#left').hover(function() {
+                $('#scroller').animate({ scrollLeft: 0 }, 1000, 'linear');
+            }, function() {
+                $('#scroller').stop();
+            });
+            $('#right').hover(function() {
+                $('#scroller').animate({ scrollLeft: 200 }, 1000, 'linear');
+            }, function() {
+                $('#scroller').stop();
+            });
+        }
     }
 };
 
