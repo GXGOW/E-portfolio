@@ -150,8 +150,8 @@ footer {
   transform: translateY(-100%); }
 
 h1,
-h2,
-h3 {
+h3,
+h2 {
   font-family: Tienne, sans-serif;
   text-shadow: 1px 1px 5px #05476B; }
 
@@ -163,7 +163,7 @@ h1 {
     vertical-align: top;
     line-height: 1.7em; }
 
-h3 {
+h3, h2 {
   margin-top: .8em;
   margin-bottom: .6em;
   color: #05476B;
@@ -171,8 +171,11 @@ h3 {
   text-align: center;
   font-family: Tienne, sans-serif;
   border-bottom: 1px solid black; }
-  h3 a {
+  h3 a, h2 a {
     color: #05476B; }
+
+h2 a {
+  color: white; }
 
 h4 {
   font-family: FontAwesome, Exo, Arial, sans-serif;
@@ -282,6 +285,11 @@ a {
     width: 60%; }
 
 /* Portfolio */
+#right:hover,
+#left:hover {
+  opacity: .3;
+  transition: 0.3s ease-in-out; }
+
 #projects {
   display: flex;
   justify-content: center;
@@ -292,6 +300,10 @@ a {
     width: 50px;
     height: 50px; }
   #projects #scroller {
+    background-color: #269;
+    background-image: linear-gradient(white 2px, transparent 2px), linear-gradient(90deg, white 2px, transparent 2px), linear-gradient(rgba(255, 255, 255, 0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.3) 1px, transparent 1px);
+    background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;
+    background-position: -2px -2px, -2px -2px, -1px -1px, -1px -1px;
     width: 330px;
     overflow: hidden;
     display: flex;
@@ -312,13 +324,23 @@ a {
         padding-right: 20px; }
       #projects #scroller figure a {
         filter: grayscale(100%);
-        line-height: initial;
-        opacity: .3; }
+        line-height: initial; }
         #projects #scroller figure a:hover {
-          opacity: 1; }
+          filter: initial; }
 
 #description {
-  display: none; }
+  margin-top: 10%;
+  padding: 1em;
+  background: linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px, linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px, linear-gradient(27deg, #222 5px, transparent 5px) 0px 10px, linear-gradient(207deg, #222 5px, transparent 5px) 10px 5px, linear-gradient(90deg, #1b1b1b 10px, transparent 10px), linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424);
+  background-color: #131313;
+  background-size: 20px 20px; }
+  #description p, #description #verslag ul, #verslag #description ul,
+  #description h2 {
+    color: white;
+    display: none; }
+  #description h2 {
+    margin-top: 0;
+    border-bottom: 3px groove white; }
 
 /* table */
 table {
@@ -439,7 +461,7 @@ label {
   h1 {
     font-size: 3.5em; }
 
-  h3 {
+  h3, h2 {
     font-size: 2.7em; }
 
   p, #verslag ul,
@@ -535,7 +557,7 @@ label {
     display: flex;
     flex-flow: row;
     justify-content: space-between; }
-    #cv .tablepart h3 {
+    #cv .tablepart h3, #cv .tablepart h2 {
       width: 30%;
       height: 100%;
       border-bottom: none; }
