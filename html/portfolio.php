@@ -1,7 +1,6 @@
 <?php
 include '../php/functions.php';
-include '../locale/' . $_SESSION["lang"] . '/' . basename($_SERVER["PHP_SELF"]);
-global $translated; ?>
+include '../locale/' . $_SESSION["lang"] . '/' . basename($_SERVER["PHP_SELF"]);?>
     <div id="content">
         <div id="projects">
             <img id="left" src="../images/back.svg" />
@@ -18,5 +17,5 @@ global $translated; ?>
             </div>
             <img id="right" src="../images/next.svg" />
         </div>
-        <div id="description"></div>
+        <div id="description"><p><?php echo $translated['descr'] ?></p></div>
     </div>
