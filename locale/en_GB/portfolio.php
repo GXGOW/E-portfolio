@@ -6,6 +6,7 @@
  * Time: 22:26
  */
 $translated = array(
+        'descr' => 'Choose a project',        
     'BreakingBook' => array(
             '\'Feesboek\' was our first project within the courses of Webapplications I. During these courses, we learned
             how to gradually build a website with HTML and CSS. After each course, we had the opportunity to implement
@@ -29,5 +30,8 @@ $translated = array(
              a few things from it.
             ',
             'To be honest, I\'m pretty proud of what I\'ve build.'
-        )
+        ),
+        'dogecoin' => array('TODO write description'),
+        'litecoin' => array('TODO write description'),
+        'GoedBezig' => array('TODO write description')    
 );

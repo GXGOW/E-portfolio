@@ -6,13 +6,14 @@
  * Time: 22:26
  */
 $translated = array(
-        'BreakingBook' => array(
+    'descr' => 'Kies een project',
+    'BreakingBook' => array(
             'Het project \'Feesboek\' was ons eerste project binnen Webapplicaties I. Hier leerden we om stap voor stap 
             in HTML en CSS websites op te bouwen. Na elke les hadden we de kans om telkens weer
                         een nieuw stukje uit die les te implementeren in deze website. Ik heb ervoor
                         gekozen om die website in de stijl van Breaking Bad te maken, omdat ik toen een enorme fan
                         was van die serie.'
-        ),
+    ),
     'trump' => array(
             'Bij het OLOD Webapplicaties II leerden we de programmeertaal Javascript. Hiermee
                         kunnen interacties binnen een website mogelijk gemaakt worden. Dit is een klein projectje dat ik zelf
@@ -35,5 +36,8 @@ $translated = array(
                         De website wordt gehost op een relatief trage webserver, dus dit was wel een bottleneck waar ik omheen moest,
                         maar dat is me toch in of meer gelukt.',
             'En om eerlijk te zijn, ik ben toch wel trots op het resultaat.'
-        )
+    ),
+    'dogecoin' => array('TODO write description'),
+    'litecoin' => array('TODO write description'),
+    'GoedBezig' => array('TODO write description')    
 );
