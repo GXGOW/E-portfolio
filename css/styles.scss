@@ -393,6 +393,9 @@ a {
         border-radius: 25px;
         padding-left: 10px;
         padding-right: 10px;
+        a {
+            display: block;
+        }
         figure {
             &:first-of-type {
                 margin-left: 10px;
