@@ -212,6 +212,7 @@ h3 {
     font-family: $header;
     border-bottom: 1px solid black;
     a {
+        display: block;
         color: $dblue;
     }
 }
@@ -432,6 +433,11 @@ a {
     h2 {
         margin-top: 0;
         border-bottom: 3px groove white;
+        transition: $transition;
+        &:hover {
+            border-bottom-color: $orange;
+            transition: $transition;
+        }
     }
 }
 

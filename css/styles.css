@@ -172,6 +172,7 @@ h3, h2 {
   font-family: Tienne, sans-serif;
   border-bottom: 1px solid black; }
   h3 a, h2 a {
+    display: block;
     color: #05476B; }
 
 h2 a {
@@ -314,7 +315,7 @@ a {
     padding-left: 10px;
     padding-right: 10px; }
     #projects #scroller a {
-      display: blokc; }
+      display: block; }
     #projects #scroller figure {
       width: 50px;
       height: 50px;
@@ -342,7 +343,11 @@ a {
     display: none; }
   #description h2 {
     margin-top: 0;
-    border-bottom: 3px groove white; }
+    border-bottom: 3px groove white;
+    transition: 0.3s ease-in-out; }
+    #description h2:hover {
+      border-bottom-color: #ffa022;
+      transition: 0.3s ease-in-out; }
 
 /* table */
 table {
