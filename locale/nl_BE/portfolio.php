@@ -37,7 +37,19 @@ $translated = array(
                         maar dat is me toch in of meer gelukt.',
             'En om eerlijk te zijn, ik ben toch wel trots op het resultaat.'
     ),
-    'dogecoin' => array('TODO write description'),
-    'litecoin' => array('TODO write description'),
-    'GoedBezig' => array('TODO write description')    
+    'dogecoin' => array('Dit is een project waarmee ik geleerd heb om met Docker te werken, software om 
+                            gemakkelijk projecten te virtualiseren in verschilende \'containers\'. Een groot
+                            pluspunt hieraan is dat dit zonder problemen werkt op elk apparaat, aangezien het
+                            in een aparte virtuele container zit.',
+                            'Dogecoin is, net als Bitcoin, een virtuele gedecentraliseerde munt. De transacties
+                            hiervan worden door miners geverifieerd. Fullnodes verspreiden enkel deze geverifieerde
+                            transacties. Het doel van dit project is om met behulp van Docker een op Ubuntu gebaseerde
+                            Dogecoin fullnode in de achtegrond te laten draaien. Geen problemen met platformgebonden
+                            restricties of ingewikkelde stappenplannen. Enkel de container downloaden en opstarten en
+                            je hebt een fullnode op je systeem draaien.'),
+    'litecoin' => array('Dit project is vrijwel hetzelfde als de Dogecoin fullnode, maar dan met Litecoin, een andere
+                            virtuele munt.'),
+    'GoedBezig' => array('Over het Goed Bezig project valt eigenlijk niet veel te zeggen. Het is een driedelig project bestaande
+                            uit een Java-applicatie, een ASP.NET Core website en een Java-Spring applicatie. We hebben veel uit het project
+                            geleerd, maar gelukkig is het gedaan, want het was een helse rit. 2/7 Niet voor herhaling vatbaar.')    
 );
