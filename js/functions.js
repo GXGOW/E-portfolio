@@ -17,6 +17,7 @@ var mainView = {
             this.loadPage(history.state.page);
             this.changeSelected($('#menu').find('a[href="#' + history.state.page + '"]'));
         } else this.loadPage('index', true);
+        this.initAnim();
         this.initMenu();
         this.setTitle();
         this.setHeaderText();
@@ -28,7 +29,12 @@ var mainView = {
         });
 
     },
+    initAnim: function() {
+        $('#panel').fadeIn(1000);
+        isMobile ? $('#menu').css('width', '256px') : $('#menu').delay(1000).animate({ width: '256px' }, 750);
+    },
     loadPage: function(page, push) {
+        $('#main').fadeOut(500);
         mainView.changeSelected($('#menu').find('a[href$=' + page + ']'));
         $('#main').load('html/' + page + '.php', function() {
             switch (page) {
@@ -65,6 +71,7 @@ var mainView = {
             }
             mainView.setHeaderText();
             mainView.setTitle();
+            $('#main').fadeIn(500);
         });
     },
 

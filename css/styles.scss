@@ -244,7 +244,10 @@ body,
     background-color: $bg;
     background-image: linear-gradient(transparent 50%, rgba(255, 255, 255, .5) 50%);
     background-size: 50px 50px;
-    ;
+}
+
+#panel {
+    display: none;
 }
 
 #desktop {
@@ -663,6 +666,7 @@ label {
     }
     #menu {
         display: block;
+        width: 0;
         height: 100%;
         a {
             font-size: 1.3em;
