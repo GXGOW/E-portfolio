@@ -39,14 +39,14 @@ $translated = array(
         'h' => 'Skills',
         'table' => array(
             'Programming' => 'HTML, CSS, Javascript, jQuery, PHP, Java, SQL, C#',
-            'IT creations' => '<a href="http://www.red-alert.be" target="_blank">Red Alert</a>',
+            'IT creations' => '<a href="#">See portfolio</a>',
             'Languages' => 'Level',
             'Dutch' => 'Native',
             'English' => 'Very fluent',
             'French' => 'Good',
             'German' => 'Basic',
-            'Hobbies' => 'Electric guitar, KLJ (youth movement), gaming, running',
-            'Other skills' => 'MS Office, Photoshop'
+            'Other skills' => 'MS Office, Docker',
+            'Hobbies' => 'Electric guitar, KLJ (youth movement), gaming, running'            
         )
     ),
 );

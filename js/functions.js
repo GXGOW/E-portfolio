@@ -12,7 +12,6 @@ var isIE = !!window.MSInputMethodContext && !!document.documentMode;
 var isMobile = screen.width <= 992;
 var mainView = {
     slideout: null,
-    projpage: 1,
     init: function() {
         if (history.state != null) {
             this.loadPage(history.state.page);
@@ -30,6 +29,7 @@ var mainView = {
 
     },
     loadPage: function(page, push) {
+        mainView.changeSelected($('#menu').find('a[href$=' + page + ']'));
         $('#main').load('html/' + page + '.php', function() {
             switch (page) {
                 case 'index':
@@ -44,6 +44,12 @@ var mainView = {
                     break;
                 case 'contact':
                     formView.getErrorMessages();
+                    break;
+                case 'cv':
+                    $('#cv').find('a').last().click(function(e) {
+                        e.preventDefault();
+                        mainView.loadPage('portfolio');
+                    });
                     break;
                 default:
                     break;
@@ -95,13 +101,16 @@ var mainView = {
             });
         });
     },
-
+    //Highlight de huidige pagina in het menu
     changeSelected: function(elem) {
+        //Verwijder klasse current van huidige element + toevoegen aan nieuwe element
         $('.current').removeClass('current');
         $(elem).addClass('current');
+        //Slideup/down activeren van iTalent-menu wanneer nodig
+        //Voorkomt ook dat het iTalent-menu niet verdwijnt als één van de links binnenin actief is
         (($(elem).attr('href') || $(elem).parent().attr('id') === 'list') && !($(elem).attr('href').indexOf('talent') >= 0)) ? $('#list').next().slideUp(500): $('#list').next().slideDown();
     },
-
+    //Verander tekst van de header volgens de huidige pagina
     setHeaderText: function() {
         if (isMobile) {
             $("#title").text($(".current").text());

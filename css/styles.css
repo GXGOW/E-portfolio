@@ -210,6 +210,10 @@ label {
   font-size: 1em;
   line-height: 1.4em; }
 
+strong {
+  font-weight: bold;
+  text-decoration: underline; }
+
 p, #verslag ul {
   padding-bottom: .5em; }
 
