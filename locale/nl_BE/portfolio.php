@@ -6,7 +6,7 @@
  * Time: 22:26
  */
 $translated = array(
-    'descr' => 'Kies een project',
+    'descr' => array('Kies een project.','Klik op de titel om naar de projectpagina van het geopende project te gaan.'),
     'BreakingBook' => array(
             'Het project \'Feesboek\' was ons eerste project binnen Webapplicaties I. Hier leerden we om stap voor stap 
             in HTML en CSS websites op te bouwen. Na elke les hadden we de kans om telkens weer
@@ -30,8 +30,8 @@ $translated = array(
                         kan tegenwoordig door middel van sociale media
                         en natuurlijk ook een website. De website was ondertussen wat verouderd, dus heb ik hem volledig
                         van 0 herschreven tot
-                        wat ze nu is. Dit was ook een goede oefening voor mij om alles wat ik tot nu toe van JS, HTML,
-                        CSS, PHP, AJAX en allerhande frameworks toe te passen en te laten samenwerken. Bovendien heeft het er voor
+                        wat ze nu is. Dit was ook een goede oefening voor mij om alles wat ik van JS, HTML,
+                        CSS, PHP, AJAX en allerhande frameworks kende toe te passen en te laten samenwerken. Bovendien heeft het er voor
                         gezorgd dat ik op andere dingen ging letten, zoals performance, laadtijden, groottes van pagina\'s, ... 
                         De website wordt gehost op een relatief trage webserver, dus dit was wel een bottleneck waar ik omheen moest,
                         maar dat is me toch in of meer gelukt.',
@@ -41,15 +41,21 @@ $translated = array(
                             gemakkelijk projecten te virtualiseren in verschilende \'containers\'. Een groot
                             pluspunt hieraan is dat dit zonder problemen werkt op elk apparaat, aangezien het
                             in een aparte virtuele container zit.',
-                            'Dogecoin is, net als Bitcoin, een virtuele gedecentraliseerde munt. De transacties
-                            hiervan worden door miners geverifieerd. Fullnodes verspreiden enkel deze geverifieerde
-                            transacties. Het doel van dit project is om met behulp van Docker een op Ubuntu gebaseerde
-                            Dogecoin fullnode in de achtegrond te laten draaien. Geen problemen met platformgebonden
+                            'Dogecoin is, net als Bitcoin, een cryptomunt. De transacties
+                            hiervan worden door miners geverifieerd en toegevoegd aan de blockchain. Fullnodes verspreiden op hun
+                            beurt de blockchain naar andere nodes. Het doel van dit project is om met behulp van Docker een op Ubuntu gebaseerde
+                            Dogecoin fullnode eenvoudig te configureren en uit te voeren. Geen problemen met platformgebonden
                             restricties of ingewikkelde stappenplannen. Enkel de container downloaden en opstarten en
-                            je hebt een fullnode op je systeem draaien.'),
-    'litecoin' => array('Dit project is vrijwel hetzelfde als de Dogecoin fullnode, maar dan met Litecoin, een andere
-                            virtuele munt.'),
-    'GoedBezig' => array('Over het Goed Bezig project valt eigenlijk niet veel te zeggen. Het is een driedelig project bestaande
-                            uit een Java-applicatie, een ASP.NET Core website en een Java-Spring applicatie. We hebben veel uit het project
-                            geleerd, maar gelukkig is het gedaan, want het was een helse rit. 2/7 Niet voor herhaling vatbaar.')    
+                            je hebt een fullnode op je systeem draaien. Zo worden de gebruikers van deze cryptomunt geholpen
+                            door een kopie van de blockchain bij te houden en verder te verspreiden naar andere nodes.'),
+    'litecoin' => array('Dit project is gelijkaardig aan de Dogecoin fullnode, maar dan met Litecoin, een andere
+                            cryptomunt.'),
+    'GoedBezig' => array('Het Goed Bezig-project is een driedelig project, bestaande uit een Java-desktopapplicatie, een ASP.NET Core website en een
+                                Java-Spring website. Dit was het eerste project waarin we gedurende het tweede jaar van de opleiding werkten voor een
+                                klant, met o.a. veel frustraties als gevolg. Meer info over de organisatie \'Goed Bezig\' kan je vinden 
+                                <a href="https://www.facebook.com/jebentgoedbezig/" target="blank">op hun Facebookpagina</a>.',
+                                'Elk deel had zijn eigen groep doelgebruikers. De desktopapplicatie was bestemd voor lectoren en organisaties, 
+                                de websites voor de studenten. Hun nut is te zien in de bovenstaande link.',
+                                'Ik heb veel uit dit project geleerd, maar ik ben blij dat het achter de rug is, want het was een helse rit.',
+                                '1/7 niet voor herhaling vatbaar.')    
 );

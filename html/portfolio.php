@@ -17,5 +17,7 @@ include '../locale/' . $_SESSION["lang"] . '/' . basename($_SERVER["PHP_SELF"]);
             </div>
             <img id="right" src="../images/next.svg" />
         </div>
-        <div id="description"><p><?php echo $translated['descr'] ?></p></div>
+        <div id="description"><?php foreach ($translated['descr'] as $line) {
+            echo'<p>'.$line.'</p>';
+        }?> </div>
     </div>
