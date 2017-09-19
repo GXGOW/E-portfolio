@@ -514,7 +514,11 @@ label {
     flex-direction: row; }
     #row img {
       width: 40%;
-      margin-right: 5%; } }
+      margin-right: 5%; }
+
+  #description {
+    margin-left: 1em;
+    margin-right: 1em; } }
 @media screen and (min-width: 992px) {
   /* mobiel naar desktop menu */
   .toggle-button {
@@ -590,4 +594,21 @@ label {
     width: calc(100% - 256px); }
 
   picture img, figure img {
-    width: auto; } }
+    width: auto; }
+
+  #projects {
+    padding-left: 10px;
+    padding-right: 10px; }
+    #projects img {
+      width: 70px;
+      height: 70px; }
+    #projects #scroller {
+      width: 450px; }
+      #projects #scroller figure {
+        width: 70px;
+        height: 70px;
+        margin-right: 40px; }
+        #projects #scroller figure:first-of-type {
+          margin-left: 20px; }
+        #projects #scroller figure:last-of-type {
+          padding-right: 40px; } }

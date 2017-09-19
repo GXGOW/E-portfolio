@@ -645,6 +645,10 @@ label {
             margin-right: 5%;
         }
     }
+    #description {
+        margin-left: 1em;
+        margin-right: 1em;
+    }
 }
 
 @media screen and (min-width: 992px) {
@@ -734,6 +738,28 @@ label {
     picture {
         img {
             width: auto;
+        }
+    }
+    #projects {
+        padding-left: 10px;
+        padding-right: 10px;
+        img {
+            width: 70px;
+            height: 70px;
+        }
+        #scroller {
+            width: 450px;
+            figure {
+                &:first-of-type {
+                    margin-left: 20px;
+                }
+                &:last-of-type {
+                    padding-right: 40px;
+                }
+                width: 70px;
+                height: 70px;
+                margin-right: 40px;
+            }
         }
     }
 }
