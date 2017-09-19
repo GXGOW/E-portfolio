@@ -1,8 +1,7 @@
 <div id="content">
     <picture>
-        <img src="../images/doit.png"/></picture>
-    <p>Op deze pagina komen de verslagen van het OLOD I2Talent. Dit bouwt verder op I1Talent (zie hiervoor de
-        desbetreffende pagina), maar nu gaan we op zoek naar waar we goed in zijn. </p>
+        <img src="../images/doit.png" /></picture>
+    <p>Op deze pagina komen de verslagen van het OLOD I2Talent. Dit bouwt verder op I1Talent (zie hiervoor de desbetreffende pagina), maar nu gaan we op zoek naar waar we goed in zijn. </p>
 
     <select id="assSelect">
         <option value="">--Selecteer een opdracht--</option>
@@ -16,7 +15,6 @@
         <option value="cebit">Beursverslag: CeBIT</option>
     </select>
 
-    <div id="verslag">
-    </div>
+    <div id="verslag"></div>
 
 </div>

@@ -1,33 +1,31 @@
 <?php
 include '../php/functions.php';
-include '../locale/' . $_SESSION["lang"] .'/'.basename($_SERVER["PHP_SELF"]);
-global $translated; ?>
-        <div id="content">
-            <div id="err" class="error"></div>
-            <?php
-                echo '<form id="form" action="">
-                        <label for="naam">' . $translated[0] . '</label>
-                        <input type="text" name="naam" placeholder="&#xf007;">
+include '../locale/' . $_SESSION["lang"] .'/'.basename($_SERVER["PHP_SELF"]);?>
+<div id="content">
+    <div id="err" class="error"></div>
+    <?php
+        echo '<form id="form" action="">
+                <label for="naam">' . $translated[0] . '</label>
+                <input type="text" name="naam" placeholder="&#xf007;">
 
-                        <label for="voornaam">'.$translated[1].'</label>
-                        <input type="text" name="voornaam" placeholder="&#xf007;">
+                <label for="voornaam">'.$translated[1].'</label>
+                <input type="text" name="voornaam" placeholder="&#xf007;">
 
-                        <label for="email">'.$translated[2].'</label>
-                        <input type="email" name="email" placeholder="&#xf1fa;">
+                <label for="email">'.$translated[2].'</label>
+                <input type="email" name="email" placeholder="&#xf1fa;">
 
-                        <label for="onderwerp">'.$translated[3].'</label>
-                        <input type="text" name="onderwerp" placeholder="&#xf059;">
+                <label for="onderwerp">'.$translated[3].'</label>
+                <input type="text" name="onderwerp" placeholder="&#xf059;">
 
-                        <label for="bericht">'.$translated[4].'</label>
-                        <textarea name="bericht" placeholder="&#xf086;"></textarea>
-                        
-                        <div id="recaptcha"></div>
-                        <input type="submit" value="'.$translated[5].'">
+                <label for="bericht">'.$translated[4].'</label>
+                <textarea name="bericht" placeholder="&#xf086;"></textarea>
+                
+                <div id="recaptcha"></div>
+                <input type="submit" value="'.$translated[5].'">
 
-                </form>';
-              ?>
-        </div>
-
+        </form>';
+        ?>
+</div>
 <?php
 $lang;
 switch($_SESSION["lang"]){

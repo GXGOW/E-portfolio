@@ -1,7 +1,6 @@
 <?php
 include '../php/functions.php';
-include '../locale/' . $_SESSION["lang"] . '/' . basename($_SERVER["PHP_SELF"]);
-global $translated; ?>
+include '../locale/' . $_SESSION["lang"] . '/' . basename($_SERVER["PHP_SELF"]);?>
 <?php initSlides('../images/slideshow') ?>
 <div id="content">
     <article>
