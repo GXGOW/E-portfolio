@@ -186,24 +186,26 @@ var mainView = {
     },
 
     initProjects: function() {
-        $('#description').find('p:first-of-type').show();
+        $('#description').find('p').show();
         $('#projects').find('a').click(function() {
             var current = $(this);
             $('#projects').find('a').not(this).removeAttr('style');
             current.css('filter', 'initial');
-            $('#description').slideUp();
             $('#description').children().fadeOut(500);
-            $.ajax({
-                url: "php/getProject.php",
-                type: 'GET',
-                data: { 'project': current.attr('id') },
-                dataType: 'json',
-                success: function(response) {
-                    $('#description').html(response);
-                    $('#description').children().fadeIn(500);
-                    $('#description').slideDown();
-                }
+            $('#description').slideUp(500, function() {
+                $.ajax({
+                    url: "php/getProject.php",
+                    type: 'GET',
+                    data: { 'project': current.attr('id') },
+                    dataType: 'json',
+                    success: function(response) {
+                        $('#description').html(response);
+                        $('#description').children().fadeIn(500);
+                        $('#description').slideDown();
+                    }
+                });
             });
+
 
         });
         if (isMobile) {
