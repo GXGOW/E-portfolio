@@ -34,33 +34,36 @@ var mainView = {
         isMobile ? $('#menu').css('width', '256px') : $('#menu').delay(1000).animate({ width: '256px' }, 750);
     },
     loadPage: function(page, push) {
-        $('#main').fadeOut(500);
-        mainView.changeSelected($('#menu').find('a[href$=' + page + ']'));
-        $('#main').load('html/' + page + '.php', function() {
-            switch (page) {
-                case 'index':
-                    mainView.initSlides();
-                    break;
-                case 'talent1':
-                case 'talent2':
-                    mainView.initAssignments();
-                    break;
-                case 'portfolio':
-                    mainView.initProjects();
-                    break;
-                case 'contact':
-                    formView.getErrorMessages();
-                    break;
-                case 'cv':
-                    $('#cv').find('a').last().click(function(e) {
-                        e.preventDefault();
-                        mainView.loadPage('portfolio');
-                    });
-                    break;
-                default:
-                    break;
-            }
+        $('#main').fadeOut(300, function() {
+            mainView.changeSelected($('#menu').find('a[href$=' + page + ']'));
             $('html, body').animate({ scrollTop: '0px' }, 300);
+            $('#main').load('html/' + page + '.php', function() {
+                $('#main').fadeIn(300, function() {
+                    switch (page) {
+                        case 'index':
+                            mainView.initSlides();
+                            break;
+                        case 'talent1':
+                        case 'talent2':
+                            mainView.initAssignments();
+                            break;
+                        case 'portfolio':
+                            mainView.initProjects();
+                            break;
+                        case 'contact':
+                            formView.getErrorMessages();
+                            break;
+                        case 'cv':
+                            $('#cv').find('a').last().click(function(e) {
+                                e.preventDefault();
+                                mainView.loadPage('portfolio');
+                            });
+                            break;
+                        default:
+                            break;
+                    }
+                });
+            });
             if (isMobile) {
                 mainView.slideout.close();
             }
@@ -71,7 +74,6 @@ var mainView = {
             }
             mainView.setHeaderText();
             mainView.setTitle();
-            $('#main').fadeIn(500);
         });
     },
 
