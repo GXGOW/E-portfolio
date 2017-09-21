@@ -56,8 +56,12 @@
   position: fixed;
   min-height: 100%; }
   #menu #sublist {
+    border-bottom: none;
+    font-size: 1em;
     display: none;
     margin-left: 1em; }
+    #menu #sublist ul {
+      padding-top: 0; }
   #menu ul {
     padding-left: 0; }
     #menu ul:first-child {

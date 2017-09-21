@@ -68,8 +68,13 @@
     position: fixed;
     min-height: 100%;
     #sublist {
+        border-bottom: none;
+        font-size: 1em;
         display: none;
         margin-left: 1em;
+        ul {
+            padding-top: 0;
+        }
     }
     ul {
         &:first-child {

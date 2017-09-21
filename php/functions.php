@@ -83,10 +83,12 @@ function getMenu()
             <li><a href="#cv"><i class="fa fa-briefcase" aria-hidden="true"></i> ' . $transmenu[2] . '</a></li>
             <li><a href="#portfolio"><i class="fa fa-book" aria-hidden="true"></i> ' . $transmenu[3] . '</a></li>
             <li id="list"><a><i class="fa fa-file-o" aria-hidden="true"></i> iTalent</a></li>
-            <ul id="sublist">
+            <li id="sublist">
+            <ul>
             <li><a href="#talent1"><i class="fa fa-file-o" aria-hidden="true"></i> i1Talent</a></li>
             <li><a href="#talent2"><i class="fa fa-file-o" aria-hidden="true"></i> i2Talent</a></li>
             </ul>
+            </li>
             <li><a href="#hobby"><i class="fa fa-headphones" aria-hidden="true"></i> ' . $transmenu[4] . '</a></li>
             <li><a href="#links"><i class="fa fa-external-link" aria-hidden="true"></i> ' . $transmenu[5] . '</a></li>
             <li><a href="#contact" class="here"><i class="fa fa-envelope-o" aria-hidden="true"></i> ' . $transmenu[6] . '</a></li>
