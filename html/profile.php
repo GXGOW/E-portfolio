@@ -8,12 +8,12 @@ include '../locale/' . $_SESSION["lang"] . '/' . basename($_SERVER["PHP_SELF"]);
     foreach ($translated as $key => $val) {
         switch ($key) {
             case strpos($key, 'h'):
-                echo '<h3>' . $val . '</h3>';
+                echo '<h2>' . $val . '</h2>';
                 break;
             case strpos($key, 'p'):
                 echo '<p>' . $val . '</p>';
                 if ($key == 'p5') {
-                    echo '<div id="row">' .
+                    echo '<div id="imgdiv">' .
                         getImages('../images/cats', false) . '</div>';
                 }
                 break;

@@ -11,7 +11,7 @@ include '../locale/' . $_SESSION["lang"] . '/' . basename($_SERVER["PHP_SELF"]);
         foreach ($item as $keypart => $part) {
             //Header invoegen
             if ($keypart == 'h') {
-                echo '<h3>' . $part . '</h3>';
+                echo '<h2>' . $part . '</h2>';
             } else {
                 //Begin tabel
                 echo '<table>';

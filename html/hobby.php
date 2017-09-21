@@ -9,7 +9,7 @@ include '../locale/' . $_SESSION["lang"] . '/' . basename($_SERVER["PHP_SELF"]);
             case strpos($key, 'p'):
                 echo '<p>'.$value.'</p>';break;
             case strpos($key, 'h'):
-                echo '<h3>' . $value . '</h3>';
+                echo '<h2>' . $value . '</h2>';
                 break;
             case $key === 'video':
                 echo '<div class="iframe">

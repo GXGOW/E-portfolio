@@ -1,7 +1,22 @@
 @import "variables";
 @import "mixins";
 
-/*menu*/
+/* HEADROOM */
+
+.headroom {
+    transition: $transition;
+}
+
+.headroom--pinned {
+    transform: translateY(0);
+}
+
+.headroom--unpinned {
+    transform: translateY(-100%);
+}
+
+
+/* SLIDEOUT */
 
 .slideout-menu {
     left: 0;
@@ -43,39 +58,8 @@
     }
 }
 
-.slideout-panel,
-#content {
-    height: auto;
-    min-height: 100%;
-}
 
-#content {
-    p {
-        margin-left: 1.2em;
-        margin-right: 1.2em;
-    }
-}
-
-#main {
-    padding-bottom: 4em;
-    margin-top: 2.5em;
-}
-
-#content,
-#cv {
-    padding-top: 5%;
-}
-
-#sublist {
-    display: none;
-    margin-left: 1em;
-}
-
-html,
-body {
-    height: 100%;
-    min-height: 100%;
-}
+/* MENU */
 
 #menu {
     @include gradient-bg(right);
@@ -83,6 +67,10 @@ body {
     margin-left: 0;
     position: fixed;
     min-height: 100%;
+    #sublist {
+        display: none;
+        margin-left: 1em;
+    }
     ul {
         &:first-child {
             padding-top: 2em;
@@ -90,6 +78,9 @@ body {
         padding-left: 0;
         li {
             border-bottom: 1px solid white;
+            .current {
+                color: $orange !important;
+            }
             a {
                 overflow: hidden;
                 display: block;
@@ -104,10 +95,6 @@ body {
             }
         }
     }
-}
-
-.current {
-    color: $orange !important;
 }
 
 #langswitch {
@@ -127,7 +114,126 @@ body {
 }
 
 
-/* header */
+/* TEXT-RELATED*/
+
+h1,
+h2 {
+    font-family: $header;
+    text-shadow: 1px 1px 5px $dblue;
+}
+
+h1 {
+    color: white;
+    font-size: 2.5em;
+    sup {
+        font-size: .5em;
+        vertical-align: top;
+        line-height: 1.7em;
+    }
+}
+
+h2 {
+    margin-top: .8em;
+    margin-bottom: .6em;
+    color: $dblue;
+    font-size: 2em;
+    text-align: center;
+    font-family: $header;
+    border-bottom: 1px solid black;
+    a {
+        display: block;
+        color: $dblue;
+    }
+}
+
+h3 {
+    font-family: $font;
+    text-align: center;
+    text-decoration: underline;
+    font-size: 1.2em;
+    margin-bottom: .3em;
+}
+
+p,
+a,
+td,
+tr,
+label {
+    font-family: $font;
+    font-size: 1em;
+    line-height: 1.4em;
+}
+
+strong {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+p {
+    padding-bottom: .5em;
+}
+
+a {
+    text-decoration: none;
+    color: $dorito;
+    transition: $transition;
+    &:hover {
+        color: $orange;
+        transition: $transition;
+        cursor: pointer;
+    }
+}
+
+
+/* BODY */
+
+body {
+    width: 100%;
+}
+
+html,
+body {
+    height: 100%;
+    min-height: 100%;
+}
+
+body,
+#panel {
+    background-color: $bg;
+    background-image: linear-gradient(transparent 50%, rgba(255, 255, 255, .5) 50%);
+    background-size: 50px 50px;
+}
+
+#content,
+#cv {
+    padding-top: 5%;
+}
+
+#panel {
+    display: none;
+}
+
+.slideout-panel,
+#content {
+    height: auto;
+    min-height: 100%;
+}
+
+#content {
+    p {
+        margin-left: 1.2em;
+        margin-right: 1.2em;
+    }
+}
+
+#main {
+    padding-bottom: 4em;
+    margin-top: 2.5em;
+}
+
+ul {
+    list-style: none;
+}
 
 header,
 footer {
@@ -146,9 +252,6 @@ header {
     z-index: 100;
     height: 2.5em;
 }
-
-
-/* footer */
 
 footer {
     p {
@@ -175,159 +278,8 @@ footer {
     bottom: 0;
 }
 
-.headroom {
-    transition: $transition;
-}
 
-.headroom--pinned {
-    transform: translateY(0);
-}
-
-.headroom--unpinned {
-    transform: translateY(-100%);
-}
-
-h1,
-h3 {
-    font-family: $header;
-    text-shadow: 1px 1px 5px $dblue;
-}
-
-h1 {
-    color: white;
-    font-size: 2.5em;
-    sup {
-        font-size: .5em;
-        vertical-align: top;
-        line-height: 1.7em;
-    }
-}
-
-h3 {
-    margin-top: .8em;
-    margin-bottom: .6em;
-    color: $dblue;
-    font-size: 2em;
-    text-align: center;
-    font-family: $header;
-    border-bottom: 1px solid black;
-    a {
-        display: block;
-        color: $dblue;
-    }
-}
-
-h2 {
-    @extend h3;
-    a {
-        color: white;
-    }
-}
-
-h4 {
-    font-family: $font;
-    text-align: center;
-    text-decoration: underline;
-    font-size: 1.2em;
-    margin-bottom: .3em;
-}
-
-
-/* body */
-
-body {
-    width: 100%;
-}
-
-body,
-#panel {
-    background-color: $bg;
-    background-image: linear-gradient(transparent 50%, rgba(255, 255, 255, .5) 50%);
-    background-size: 50px 50px;
-}
-
-#panel {
-    display: none;
-}
-
-#desktop {
-    display: none;
-}
-
-ul {
-    list-style: none;
-}
-
-p,
-a,
-td,
-tr,
-label {
-    font-family: $font;
-    font-size: 1em;
-    line-height: 1.4em;
-}
-
-strong {
-    font-weight: bold;
-    text-decoration: underline;
-}
-
-p {
-    padding-bottom: .5em;
-}
-
-.iframe {
-    display: flex;
-    justify-content: center;
-    margin-top: 1em;
-    margin-bottom: 1em;
-}
-
-a {
-    text-decoration: none;
-    color: $dorito;
-    transition: $transition;
-    &:hover {
-        color: $orange;
-        transition: $transition;
-        cursor: pointer;
-    }
-}
-
-#links {
-    text-align: center;
-}
-
-#valkuil {
-    color: black;
-}
-
-.site {
-    text-align: center;
-}
-
-#inhoud {
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    margin-bottom: 1.5em;
-    margin-top: 1.5em;
-    ul {
-        padding: .5em;
-        display: flex;
-        flex-flow: column;
-        justify-content: center;
-        text-align: center;
-        border: 1px dotted $lblue;
-        li {
-            padding-bottom: .5em;
-            &:last-of-type {
-                padding-bottom: 0;
-            }
-        }
-    }
-}
+/* TALENT-PAGINA'S */
 
 #verslag {
     text-align: center;
@@ -355,7 +307,10 @@ a {
     margin: 0 auto 2em;
 }
 
-#row {
+
+/* PROFILE-PAGINA */
+
+#imgdiv {
     margin: 20px;
     display: flex;
     flex-flow: column;
@@ -368,7 +323,7 @@ a {
 }
 
 
-/* Portfolio */
+/* PORTFOLIO-PAGINA */
 
 #right,
 #left {
@@ -434,8 +389,12 @@ a {
     background-color: #131313;
     background-size: 20px 20px;
     p,
-    h2 {
+    h2,
+    a {
         color: white;
+    }
+    p,
+    h2 {
         display: none;
     }
     h2 {
@@ -443,6 +402,9 @@ a {
         border-bottom: 3px groove white;
         transition: $transition;
         &:hover {
+            a {
+                color: $orange;
+            }
             border-bottom-color: $orange;
             transition: $transition;
         }
@@ -450,7 +412,7 @@ a {
 }
 
 
-/* table */
+/* CV-pagina */
 
 table {
     width: 100%;
@@ -489,7 +451,7 @@ figure {
 }
 
 
-/* contact */
+/* CONTACT-PAGINA */
 
 .error {
     color: red;
@@ -591,9 +553,6 @@ label {
         position: fixed;
     }
     #menu {
-        h2 {
-            font-size: 2.5em;
-        }
         li {
             font-size: 1.2em;
         }
@@ -601,7 +560,7 @@ label {
     h1 {
         font-size: 3.5em;
     }
-    h3 {
+    h2 {
         font-size: 2.7em;
     }
     p,
@@ -645,7 +604,7 @@ label {
             height: auto;
         }
     }
-    #row {
+    #imgdiv {
         flex-flow: row wrap;
         flex-direction: row;
         img {
@@ -714,7 +673,7 @@ label {
             display: flex;
             flex-flow: row;
             justify-content: space-between;
-            h3 {
+            h2 {
                 width: 30%;
                 height: 100%;
                 border-bottom: none;
@@ -734,7 +693,7 @@ label {
     textarea {
         width: 55%;
     }
-    #row {
+    #imgdiv {
         flex-flow: row;
         img {
             width: 25%;
