@@ -258,10 +258,13 @@ footer {
     width: 60%; }
 
 /* PORTFOLIO-PAGINA */
-#right:hover,
-#left:hover {
-  opacity: .3;
+#right,
+#left {
   transition: 0.3s ease-in-out; }
+  #right:hover,
+  #left:hover {
+    opacity: .3;
+    transition: 0.3s ease-in-out; }
 
 #projects {
   display: flex;
