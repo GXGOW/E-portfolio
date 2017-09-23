@@ -86,8 +86,9 @@ function getMenu()
             <li id="list"><a><i class="fa fa-file-o" aria-hidden="true"></i> iTalent</a></li>
             <li id="sublist">
             <ul>
-            <li><a href="#talent1"><i class="fa fa-file-o" aria-hidden="true"></i> i1Talent</a></li>
-            <li><a href="#talent2"><i class="fa fa-file-o" aria-hidden="true"></i> i2Talent</a></li>
+            <li><a href="#talent1"><i class="fa fa-file-text" aria-hidden="true"></i> i1Talent</a></li>
+            <li><a href="#talent2"><i class="fa fa-file-text" aria-hidden="true"></i> i2Talent</a></li>
+            <li><a href="#talent3"><i class="fa fa-file-text" aria-hidden="true"></i> i3Talent</a></li>            
             </ul>
             </li>
             <li><a href="#hobby"><i class="fa fa-headphones" aria-hidden="true"></i> ' . $transmenu[4] . '</a></li>
