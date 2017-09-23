@@ -173,6 +173,11 @@ body,
 #panel {
   display: none; }
 
+.iframe {
+  display: flex;
+  justify-content: center;
+  width: 100%; }
+
 .slideout-panel,
 #content {
   height: auto;
