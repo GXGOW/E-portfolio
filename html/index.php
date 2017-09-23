@@ -6,7 +6,7 @@ include '../locale/' . $_SESSION["lang"] . '/' . basename($_SERVER["PHP_SELF"]);
     <article>
         <?php
         foreach ($translated as $item) {
-            echo '<p>' . $item . '</p>';
+            echo '<p style="text-align: center">' . $item . '</p>';
         }
         ?>
     </article>
