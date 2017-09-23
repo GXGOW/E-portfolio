@@ -6,6 +6,7 @@ try {
     window.slidesjs = require('../js/jquery.slides.js');
     window.Headroom = require('headroom.js');
     window.$.headroom = require('headroom.js/dist/jQuery.headroom');
+    window.KonamiCode = require('konami-code');
 } catch (e) {}
 
 var isIE = !!window.MSInputMethodContext && !!document.documentMode;
@@ -21,6 +22,7 @@ var mainView = {
         this.initMenu();
         this.setTitle();
         this.setHeaderText();
+        this.easter();
         if (isMobile) {
             $('header').headroom();
         }
@@ -150,6 +152,24 @@ var mainView = {
                     $("#slides").find("i").hide();
                 }
             }
+        });
+    },
+
+    easter: function() {
+        var konami = new KonamiCode();
+        konami.listen(function() {
+            var audio = new Audio('audio/lememe.ogg');
+            audio.play();
+            $("#panel").css({
+                "background-image": "url('images/worstenbroodman.jpg')",
+                "background-size": "cover"
+            });
+            $('#menu').find('ul').first().append('<img style="width: 256px" src="images/anim.gif" />');
+            setTimeout(function() {
+                $('#menu').find('ul img').first().remove();
+                $('#panel').css({ 'background-image': 'inherit', 'background-size': 'inherit' });
+                audio.pause();
+            }, 30000);
         });
     },
 

@@ -43,6 +43,7 @@ function getScripts()
         <script src="node_modules/jquery-validation/dist/jquery.validate.js"></script>
         <script src="node_modules/headroom.js/dist/headroom.js"></script>
         <script src="node_modules/headroom.js/dist/jQuery.headroom.js"></script>
+        <script src="node_modules/konami-code/KonamiCode.js"></script>        
         <script src="js/jquery.slides.js"></script>
         <script src="js/functions.js"></script>
         '
