@@ -48,9 +48,6 @@ var mainView = {
                         case 'portfolio':
                             mainView.initProjects();
                             break;
-                        case 'contact':
-                            formView.getErrorMessages();
-                            break;
                         case 'cv':
                             $('#cv').find('a').last().click(function(e) {
                                 e.preventDefault();
@@ -224,98 +221,6 @@ var mainView = {
         }
     }
 };
-
-var formView = {
-    errors: null,
-    getErrorMessages: function() {
-        $.ajax({
-            url: "php/validationMsg.php",
-            type: 'GET',
-            dataType: 'json',
-            success: function(data) {
-                formView.errors = data;
-                formView.initForm();
-            }
-        });
-    },
-    initForm: function() {
-        $.getScript('https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.2.2/jquery.form.min.js', function() {
-            $('#form').ajaxForm({
-                beforeSubmit: function() {
-                    $('#form').validate();
-                }
-            });
-        });
-        $(function() {
-            $("#form").validate({
-                rules: {
-                    naam: {
-                        required: true,
-                        minlength: 2
-                    },
-                    voornaam: {
-                        required: true,
-                        minlength: 2
-                    },
-                    email: {
-                        required: true,
-                        email: true
-                    },
-                    onderwerp: {
-                        required: true,
-                        minlength: 3
-                    },
-                    bericht: {
-                        required: true,
-                        minlength: 20
-                    }
-                },
-                messages: {
-                    naam: {
-                        required: formView.errors['required'],
-                        minlength: formView.errors['minlengthLN']
-                    },
-                    voornaam: {
-                        required: formView.errors['required'],
-                        minlength: formView.errors['minlengthFN']
-                    },
-                    email: formView.errors['email'],
-                    onderwerp: formView.errors['required'],
-                    bericht: formView.errors['required']
-                },
-                submitHandler: function() {
-                    $('#form').ajaxSubmit({
-                        url: '../php/form.php',
-                        type: 'post',
-                        success: function(data) {
-                            if (data !== 'success') {
-                                var err;
-                                switch (data) {
-                                    case 'err_captcha':
-                                        err = formView.errors['captcha'];
-                                        break;
-                                    case 'err_email':
-                                        err = formView.errors['email'];
-                                        break;
-                                    case 'err_null':
-                                        err = formView.errors['required'];
-                                        break;
-                                }
-                                $('#err').append('<p class="error">' + err + '</p>');
-                            }
-                            $('#err').fadeOut(500);
-                            $('#form').fadeOut(500, function() {
-                                $('#content').empty();
-                                $('#content').append('<p class="success">Het formulier werd met succes ingediend!</p>');
-                                $('.success').fadeIn(500);
-                            });
-                        }
-                    });
-                }
-            })
-        });
-    }
-}
 
 window.onload = function() {
     if (isIE) {

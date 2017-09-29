@@ -85,7 +85,6 @@ function getMenu()
             <li><a href="#portfolio"><i class="fa fa-book" aria-hidden="true"></i> ' . $transmenu[3] . '</a></li>
             <li><a href="#hobby"><i class="fa fa-headphones" aria-hidden="true"></i> ' . $transmenu[4] . '</a></li>
             <li><a href="#links"><i class="fa fa-external-link" aria-hidden="true"></i> ' . $transmenu[5] . '</a></li>
-            <li><a href="#contact" class="here"><i class="fa fa-envelope-o" aria-hidden="true"></i> ' . $transmenu[6] . '</a></li>
         </ul>
     ' . getLangOptions() . '
     </nav>';

@@ -11,6 +11,5 @@ $transmenu = array(
     'CV',
     'Portfolio',
     'Occupations',
-    'Links',
-    'Contact'
+    'Links'
 );
