@@ -45,10 +45,6 @@ var mainView = {
                         case 'index':
                             mainView.initSlides();
                             break;
-                        case 'talent1':
-                        case 'talent2':
-                            mainView.initAssignments();
-                            break;
                         case 'portfolio':
                             mainView.initProjects();
                             break;
@@ -182,27 +178,6 @@ var mainView = {
                 location.reload();
             }
         });
-    },
-
-    initAssignments: function() {
-        $("#assSelect").change(function() {
-            mainView.loadAssignment($("#assSelect").val());
-        });
-    },
-
-    loadAssignment: function(ass) {
-        if (ass !== "") {
-            $("#verslag").slideUp(300, function() {
-                var folder = $('.current').attr('href').split('#')[1];
-                $("#verslag").load('html/' + folder + "/" + ass + ".html", function() {
-                    $("#verslag").slideDown();
-                });
-            });
-        } else {
-            $("#verslag").slideUp(300, function() {
-                $("#verslag").empty();
-            });
-        }
     },
 
     initProjects: function() {
