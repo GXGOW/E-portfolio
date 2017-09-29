@@ -134,7 +134,7 @@ function initSlides($path)
 
 function getLangOptions()
 {
-    $values = ['nl_BE' => 'Nederlands', 'en_GB' => 'English', 'fr_FR' => 'Français'];
+    $values = ['nl_BE' => 'Nederlands', 'en_GB' => 'English'];
     $output = '<select id="langswitch">';
     foreach ($values as $key => $value) {
         if ($key == $_SESSION['lang']) {
