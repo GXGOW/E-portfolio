@@ -126,7 +126,7 @@ h3 {
   font-size: 1.2em;
   margin-bottom: .3em; }
 
-p, #verslag ul,
+p,
 a,
 td,
 tr,
@@ -139,7 +139,7 @@ strong {
   font-weight: bold;
   text-decoration: underline; }
 
-p, #verslag ul {
+p {
   padding-bottom: .5em; }
 
 a {
@@ -183,7 +183,7 @@ body,
   height: auto;
   min-height: 100%; }
 
-#content p, #content #verslag ul, #verslag #content ul {
+#content p {
   margin-left: 1.2em;
   margin-right: 1.2em; }
 
@@ -218,11 +218,11 @@ footer {
   position: absolute;
   width: 100%;
   bottom: 0; }
-  footer p, footer #verslag ul, #verslag footer ul {
+  footer p {
     color: white;
     padding-bottom: 0;
     font-size: 0.8em; }
-    footer p:last-of-type, footer #verslag ul:last-of-type, #verslag footer ul:last-of-type {
+    footer p:last-of-type {
       font-size: 1.5em; }
   footer a {
     color: white;
@@ -231,27 +231,6 @@ footer {
       margin-right: 0; }
     footer a:hover {
       color: #ffa022; }
-
-/* TALENT-PAGINA'S */
-#verslag {
-  text-align: center;
-  border: 1px solid black;
-  border-radius: 15px;
-  display: none;
-  padding-top: .8em; }
-  #verslag img {
-    width: 80%;
-    height: 80%; }
-  #verslag p, #verslag ul {
-    text-align: left;
-    padding-left: 1em;
-    padding-right: 1em; }
-  #verslag ul {
-    list-style: circle; }
-
-#assSelect {
-  display: block;
-  margin: 0 auto 2em; }
 
 /* PROFILE-PAGINA */
 #imgdiv {
@@ -319,11 +298,11 @@ footer {
   background: linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px, linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px, linear-gradient(27deg, #222 5px, transparent 5px) 0px 10px, linear-gradient(207deg, #222 5px, transparent 5px) 10px 5px, linear-gradient(90deg, #1b1b1b 10px, transparent 10px), linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424);
   background-color: #131313;
   background-size: 20px 20px; }
-  #description p, #description #verslag ul, #verslag #description ul,
+  #description p,
   #description h2,
   #description a {
     color: white; }
-  #description p, #description #verslag ul, #verslag #description ul,
+  #description p,
   #description h2 {
     display: none; }
   #description h2 {
@@ -366,71 +345,6 @@ picture, figure {
 figure {
   flex-flow: column; }
 
-/* CONTACT-PAGINA */
-.error {
-  color: red; }
-
-.success {
-  color: green;
-  display: none;
-  width: 100%;
-  text-align: center; }
-
-#form {
-  margin-left: 1em; }
-
-input,
-textarea {
-  background-color: lightgray;
-  transition: 0.3s ease-in-out; }
-  input:focus,
-  textarea:focus {
-    background-color: white;
-    transition: 0.3s ease-in-out; }
-
-textarea {
-  resize: none;
-  height: 3.5em; }
-  textarea::-webkit-input-placeholder {
-    color: white; }
-  textarea:-ms-input-placeholder {
-    color: white; }
-
-input::-webkit-input-placeholder {
-  color: white; }
-input:-ms-input-placeholder {
-  color: white; }
-
-input[type="text"],
-input[type="email"],
-textarea {
-  border-radius: 5px;
-  width: 80%;
-  font-family: FontAwesome, Exo, Arial, sans-serif;
-  font-size: 1em;
-  text-indent: 5px; }
-
-input[type="text"],
-input[type="email"] {
-  height: 1.2em; }
-
-input[type="submit"] {
-  display: block;
-  border: none;
-  background-color: #3CB8FF;
-  color: white;
-  height: 3em;
-  width: 5em;
-  border-radius: 10px; }
-  input[type="submit"]:hover {
-    background-color: #ffa022;
-    box-shadow: 0 0 30px #3CB8FF; }
-
-label {
-  display: block;
-  padding-bottom: .5em;
-  padding-top: .5em; }
-
 #slides {
   display: none; }
 
@@ -456,13 +370,13 @@ label {
   h2 {
     font-size: 2.7em; }
 
-  p, #verslag ul,
+  p,
   td,
   tr,
   label {
     font-size: 1.3em; }
 
-  p > a, #verslag ul > a {
+  p > a {
     font-size: 1em; }
 
   label {
@@ -483,11 +397,11 @@ label {
     display: flex;
     flex-flow: row; }
 
-  .content p, .content #verslag ul, #verslag .content ul {
+  .content p {
     padding-left: 1.5em;
     padding-right: 1.5em; }
 
-  footer p, footer #verslag ul, #verslag footer ul {
+  footer p {
     font-size: 1em; }
 
   #verslag img {

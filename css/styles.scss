@@ -293,35 +293,6 @@ footer {
 }
 
 
-/* TALENT-PAGINA'S */
-
-#verslag {
-    text-align: center;
-    border: 1px solid black;
-    border-radius: 15px;
-    display: none;
-    padding-top: .8em;
-    img {
-        width: 80%;
-        height: 80%;
-    }
-    p {
-        text-align: left;
-        padding-left: 1em;
-        padding-right: 1em;
-    }
-    ul {
-        @extend p;
-        list-style: circle;
-    }
-}
-
-#assSelect {
-    display: block;
-    margin: 0 auto 2em;
-}
-
-
 /* PROFILE-PAGINA */
 
 #imgdiv {
@@ -463,89 +434,6 @@ picture {
 figure {
     @extend picture;
     flex-flow: column;
-}
-
-
-/* CONTACT-PAGINA */
-
-.error {
-    color: red;
-}
-
-.success {
-    color: green;
-    display: none;
-    width: 100%;
-    text-align: center;
-}
-
-#form {
-    margin-left: 1em;
-}
-
-input,
-textarea {
-    background-color: lightgray;
-    transition: $transition;
-    &:focus {
-        background-color: white;
-        transition: $transition;
-    }
-}
-
-textarea {
-    resize: none;
-    height: 3.5em;
-    &::-webkit-input-placeholder {
-        color: white;
-    }
-    &:-ms-input-placeholder {
-        color: white;
-    }
-}
-
-input {
-    &::-webkit-input-placeholder {
-        color: white;
-    }
-    &:-ms-input-placeholder {
-        color: white;
-    }
-}
-
-input[type="text"],
-input[type="email"],
-textarea {
-    border-radius: 5px;
-    width: 80%;
-    font-family: $font;
-    font-size: 1em;
-    text-indent: 5px;
-}
-
-input[type="text"],
-input[type="email"] {
-    height: 1.2em;
-}
-
-input[type="submit"] {
-    display: block;
-    border: none;
-    background-color: $lblue;
-    color: white;
-    height: 3em;
-    width: 5em;
-    border-radius: 10px;
-    &:hover {
-        background-color: $orange;
-        box-shadow: 0 0 30px $lblue;
-    }
-}
-
-label {
-    display: block;
-    padding-bottom: .5em;
-    padding-top: .5em;
 }
 
 #slides {
