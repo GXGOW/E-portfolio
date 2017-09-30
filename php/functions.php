@@ -74,9 +74,7 @@ function getScripts()
           function gtag(){dataLayer.push(arguments)};
           gtag("js", new Date());
           gtag("config", "UA-91503104-2");
-        </script>
-        
-        ';
+        </script>';
     echo $scripts;
 }
 
@@ -116,9 +114,10 @@ function getFooter()
     echo
     '<footer>
             <p><i class="fa fa-copyright" aria-hidden="true"></i> Nicolas Loots</p>
-            <p><a href="https://www.facebook.com/Loots2.0" target="_blank"><i class="fa fa-facebook-official" aria-hidden="true"></i>
-</a> <a href="https://twitter.com/GXGOW" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a> 
+            <p><a href="https://www.facebook.com/Loots2.0" target="_blank"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
+            <a href="https://twitter.com/GXGOW" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a> 
             <a href="https://github.com/GXGOW" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+            <a href="https://www.quora.com/profile/Nicolas-Loots" target="_blank"><i class="fa fa-quora" aria-hidden="true"></i></a>
             </p>
     </footer>';
 }

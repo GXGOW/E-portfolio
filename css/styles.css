@@ -227,6 +227,8 @@ footer {
   footer a {
     color: white;
     margin-right: .3em; }
+    footer a:last-of-type {
+      margin-right: 0; }
     footer a:hover {
       color: #ffa022; }
 
