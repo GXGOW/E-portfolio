@@ -144,7 +144,7 @@ h2 {
     font-size: 2em;
     text-align: center;
     font-family: $header;
-    border-bottom: 1px solid black;
+    border-bottom: 3px solid black;
     a {
         display: block;
         color: $dblue;
@@ -188,6 +188,10 @@ a {
         transition: $transition;
         cursor: pointer;
     }
+}
+
+#links {
+    text-align: center;
 }
 
 
