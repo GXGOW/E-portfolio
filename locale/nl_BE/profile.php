@@ -13,7 +13,6 @@ $translated = array(
     'p2' => 'Ik heb in het secundair onderwijs mijn diploma Latijn-Wetenschappen behaald aan het Sint-Jozefinstituut
                 Hamme (tegenwoordig KOHa Campus Sint-Jozef). Momenteel studeer ik toegepaste informatica aan de
                 Hogeschool Gent.',
-    'p3' => 'Verder zit ik al bijna 5 jaar in een vaste relatie met de lieftallige Jolien Mertens.',
     'h2' => 'Interesses',
     'p4' => 'Mijn voornaamste interesses zijn natuurlijk IT en ook een beetje wetenschap. Hoewel ik op school niet al te denderend
                 goed scoorde op mijn wetenschapsvakken, is het mij toch blijven boeien. Het blijft me verbazen hoe het

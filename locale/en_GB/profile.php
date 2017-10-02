@@ -11,7 +11,6 @@ $translated = array(
     my elder brother Laurent and my younger sister Xandrine. Ever since I got my first pc, I\'ve been fascinated by them.',
     'p2' => 'In high school I studied Latin-Science at the Sint-Jozefinstituut in Hamme. Currently, I\'m studying applied computer sciences
     in college at Hogeschool Gent.',
-    'p3' => 'I\'ve also been, and still am, in a relationship with the lovely Jolien Mertens for the past five years.',
     'h2' => 'Interests',
     'p4' => 'My primary interest, of course, is IT, but I\'m also very interested in science, even though I sucked at it in high school.
     Anyway, I\'m still amazed at the fact that it keeps evolving at this rate and that we\'re continually seeing new breakthroughs.
