@@ -3,7 +3,7 @@ include '../php/functions.php';
 include '../locale/' . $_SESSION["lang"] . '/' . basename($_SERVER["PHP_SELF"]);?>
 <div id="content">
     <picture>
-        <img src="../images/profile.jpg" alt="Mezelf"/></picture>
+        <img id="profile" src="../images/profile.png" alt="Mezelf"/></picture>
     <?php
     foreach ($translated as $key => $val) {
         switch ($key) {
