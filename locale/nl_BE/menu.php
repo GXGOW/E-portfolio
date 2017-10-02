@@ -9,7 +9,8 @@ $transmenu = array(
     'Home',
     'Profiel',
     'CV',
+    'Ervaringen',
     'Portfolio',
-    'Bezigheden',
+    'Hobby\'s',
     'Links'
 );

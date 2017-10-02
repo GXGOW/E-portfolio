@@ -88,9 +88,10 @@ function getMenu()
             <li><a href="#index" class="current"><i class="fa fa-home" aria-hidden="true"></i> ' . $transmenu[0] . '</a></li>
             <li><a href="#profile"><i class="fa fa-male" aria-hidden="true"></i> ' . $transmenu[1] . '</a></li>
             <li><a href="#cv"><i class="fa fa-briefcase" aria-hidden="true"></i> ' . $transmenu[2] . '</a></li>
-            <li><a href="#portfolio"><i class="fa fa-book" aria-hidden="true"></i> ' . $transmenu[3] . '</a></li>
-            <li><a href="#hobby"><i class="fa fa-headphones" aria-hidden="true"></i> ' . $transmenu[4] . '</a></li>
-            <li><a href="#links"><i class="fa fa-external-link" aria-hidden="true"></i> ' . $transmenu[5] . '</a></li>
+            <li><a href="#experience"><i class="fa fa-graduation-cap" aria-hidden="true"></i> ' . $transmenu[3] . '</a></li>
+            <li><a href="#portfolio"><i class="fa fa-folder-open" aria-hidden="true"></i> ' . $transmenu[4] . '</a></li>            
+            <li><a href="#hobby"><i class="fa fa-headphones" aria-hidden="true"></i> ' . $transmenu[5] . '</a></li>
+            <li><a href="#links"><i class="fa fa-external-link" aria-hidden="true"></i> ' . $transmenu[6] . '</a></li>
         </ul>
     ' . getLangOptions() . '
     </nav>';

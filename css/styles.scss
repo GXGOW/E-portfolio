@@ -163,7 +163,8 @@ p,
 a,
 td,
 tr,
-label {
+label,
+figcaption {
     font-family: $font;
     font-size: 1em;
     line-height: 1.4em;
@@ -398,6 +399,41 @@ footer {
 }
 
 
+/* Experiences-pagina */
+
+#expList {
+    a {
+        font-size: 1.2em;
+    }
+    text-align: center;
+    width: 100%;
+    li {
+        margin-bottom: .5em;
+    }
+}
+
+#loader {
+    background: rgba(0, 0, 0, .6);
+    padding-top: 2em;
+    padding-bottom: 2em;
+    display: none;
+    p,
+    figcaption {
+        color: white;
+    }
+    a {
+        color: yellow;
+    }
+    figure {
+        text-align: center;
+        margin-bottom: 1em;
+        img {
+            width: 90%;
+        }
+    }
+}
+
+
 /* CV-pagina */
 
 table {
@@ -556,20 +592,6 @@ figure {
         margin-left: 15%;
         margin-right: 15%;
     }
-    #form {
-        width: 100%;
-        text-align: center;
-        label {
-            text-align: left;
-        }
-        input,
-        textarea {
-            width: 100%;
-        }
-        input[type="submit"] {
-            width: 10%;
-        }
-    }
     #cv {
         .tablepart {
             display: flex;
@@ -629,6 +651,13 @@ figure {
                 width: 70px;
                 height: 70px;
                 margin-right: 40px;
+            }
+        }
+    }
+    #loader {
+        figure {
+            img {
+                width: 60%;
             }
         }
     }

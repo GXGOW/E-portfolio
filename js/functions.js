@@ -54,6 +54,9 @@ var mainView = {
                                 mainView.loadPage('portfolio');
                             });
                             break;
+                        case 'experience':
+                            mainView.initLoader();
+                            break;
                         default:
                             break;
                     }
@@ -102,6 +105,13 @@ var mainView = {
                 if ($(this).attr('href')) {
                     mainView.loadPage($(this).attr('href').split('#')[1], true);
                 }
+            });
+        });
+    },
+    initLoader: function() {
+        $('#expList').find('a').click(function() {
+            $('#loader').load('html/expfiles/' + $(this).attr('id') + '.html', function() {
+                $('#loader').fadeIn(800);
             });
         });
     },

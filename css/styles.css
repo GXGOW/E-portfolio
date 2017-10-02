@@ -130,7 +130,8 @@ p,
 a,
 td,
 tr,
-label {
+label,
+figcaption {
   font-family: FontAwesome, Exo, Arial, sans-serif;
   font-size: 1em;
   line-height: 1.4em; }
@@ -315,6 +316,31 @@ footer {
       #description h2:hover a {
         color: #ffa022; }
 
+/* Experiences-pagina */
+#expList {
+  text-align: center;
+  width: 100%; }
+  #expList a {
+    font-size: 1.2em; }
+  #expList li {
+    margin-bottom: .5em; }
+
+#loader {
+  background: rgba(0, 0, 0, 0.6);
+  padding-top: 2em;
+  padding-bottom: 2em;
+  display: none; }
+  #loader p,
+  #loader figcaption {
+    color: white; }
+  #loader a {
+    color: yellow; }
+  #loader figure {
+    text-align: center;
+    margin-bottom: 1em; }
+    #loader figure img {
+      width: 90%; }
+
 /* CV-pagina */
 table {
   width: 100%; }
@@ -452,17 +478,6 @@ figure {
     margin-left: 15%;
     margin-right: 15%; }
 
-  #form {
-    width: 100%;
-    text-align: center; }
-    #form label {
-      text-align: left; }
-    #form input,
-    #form textarea {
-      width: 100%; }
-    #form input[type="submit"] {
-      width: 10%; }
-
   #cv .tablepart {
     display: flex;
     flex-flow: row;
@@ -510,4 +525,7 @@ figure {
         #projects #scroller figure:first-of-type {
           margin-left: 20px; }
         #projects #scroller figure:last-of-type {
-          padding-right: 40px; } }
+          padding-right: 40px; }
+
+  #loader figure img {
+    width: 60%; } }

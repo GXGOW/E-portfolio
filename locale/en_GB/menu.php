@@ -9,6 +9,7 @@ $transmenu = array(
     'Home',
     'Profile',
     'CV',
+    'Experiences',
     'Portfolio',
     'Occupations',
     'Links'
