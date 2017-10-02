@@ -9,7 +9,7 @@ include '../locale/' . $_SESSION["lang"] . '/' . basename($_SERVER["PHP_SELF"]);
             <li><a id="disc">DISC-test</a></li>
             <li><a id="cyber">Lezing: The basics of Cyber Security</a></li>
             <li><a id="myers">Myers-Briggs type indicator</a></li>
-            <li><a id="enneagram">Enneagram-test</a></li>
+            <li><a id="enneagram">Resultaat Enneagramtest</a></li>
             <li><a id="cebit">CeBIT: beursverslag</a></li>
         </ul>
 
