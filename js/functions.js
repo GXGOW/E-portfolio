@@ -14,12 +14,11 @@ var isMobile = screen.width <= 992;
 var mainView = {
     slideout: null,
     init: function() {
-        if (history.state != null) {
-            this.loadPage(history.state.page);
-            this.changeSelected($('#menu').find('a[href="#' + history.state.page + '"]'));
-        } else this.loadPage('index', true);
-        this.initAnim();
         this.initMenu();
+        if (history.state != null) {
+            this.simpleLoad(history.state.page);
+            this.changeSelected($('#menu').find('a[href="#' + history.state.page + '"]'));
+        } else this.simpleLoad('index', true);
         this.setTitle();
         this.setHeaderText();
         this.easter();
@@ -29,6 +28,9 @@ var mainView = {
         $("#langswitch").change(function() {
             mainView.changeLocale($("#langswitch").val());
         });
+        $('#panel').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
+            $(this).removeClass('animated zoomIn');
+        });
 
     },
     initAnim: function() {
@@ -36,43 +38,53 @@ var mainView = {
         isMobile ? $('#menu').css('width', '256px') : $('#menu').delay(1000).animate({ width: '256px' }, 750);
     },
     loadPage: function(page, push) {
-        $('#main').fadeOut(300, function() {
-            mainView.changeSelected($('#menu').find('a[href$=' + page + ']'));
-            $('html, body').animate({ scrollTop: '0px' }, 300);
-            $('#main').load('html/' + page + '.php', function() {
-                $('#main').fadeIn(300, function() {
-                    switch (page) {
-                        case 'index':
-                            mainView.initSlides();
-                            break;
-                        case 'portfolio':
-                            mainView.initProjects();
-                            break;
-                        case 'cv':
-                            $('#cv').find('a').last().click(function(e) {
-                                e.preventDefault();
-                                mainView.loadPage('portfolio');
-                            });
-                            break;
-                        case 'experience':
-                            mainView.initLoader();
-                            break;
-                        default:
-                            break;
-                    }
-                });
-            });
-            if (isMobile) {
-                mainView.slideout.close();
-            }
-            if (push) {
-                history.pushState({
-                    page: page
-                }, null, page);
-            }
-            mainView.setHeaderText();
-            mainView.setTitle();
+        $('body').css('overflow', 'hidden');
+        $('#main').addClass('animated slideOutUp');
+        mainView.changeSelected($('#menu').find('a[href$=' + page + ']'));
+        $('html, body').animate({ scrollTop: '0px' }, 300);
+        $('#main').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
+            mainView.simpleLoad(page, push);
         });
+
+    },
+
+    simpleLoad: function(page, push) {
+        $('#main').load('html/' + page + '.php', function() {
+            switch (page) {
+                case 'index':
+                    mainView.initSlides();
+                    break;
+                case 'portfolio':
+                    mainView.initProjects();
+                    break;
+                case 'cv':
+                    $('#cv').find('a').last().click(function(e) {
+                        e.preventDefault();
+                        mainView.loadPage('portfolio');
+                    });
+                    break;
+                case 'experience':
+                    mainView.initLoader();
+                    break;
+                default:
+                    break;
+            }
+            $(this).removeClass('slideOutUp').addClass('slideInDown');
+            $('#main').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
+                $('body').css('overflow', 'initial');
+                $(this).removeClass('animated slideInDown');
+            });
+        });
+        if (isMobile) {
+            mainView.slideout.close();
+        }
+        if (push) {
+            history.pushState({
+                page: page
+            }, null, page);
+        }
+        mainView.setHeaderText();
+        mainView.setTitle();
     },
 
     setTitle: function() {
@@ -101,9 +113,11 @@ var mainView = {
         $('#menu').find('a').each(function() {
             $(this).click(function(e) {
                 e.preventDefault();
-                mainView.changeSelected($(this));
-                if ($(this).attr('href')) {
-                    mainView.loadPage($(this).attr('href').split('#')[1], true);
+                if (($(this).text() !== $('.current').text())) {
+                    mainView.changeSelected($(this));
+                    if ($(this).attr('href')) {
+                        mainView.loadPage($(this).attr('href').split('#')[1], true);
+                    }
                 }
             });
         });

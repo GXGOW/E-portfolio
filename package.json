@@ -5,6 +5,7 @@
     "main": "index.js",
     "repository": "https://github.com/GXGOW/E-portfolio",
     "dependencies": {
+        "animate.css": "^3.5.2",
         "browserify": "^14.4.0",
         "browserify-css": "^0.11.1",
         "css-ripple-effect": "^1.0.5",

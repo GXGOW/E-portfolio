@@ -6,7 +6,7 @@
  * Time: 22:26
  */
 $translated = array(
-        'descr' => 'Choose a project','Click on the title of the selected project to open its page.',        
+        'descr' => array('Choose a project','Click on the title of the selected project to open its page.'),        
     'BreakingBook' => array(
             '\'Feesboek\' was our first project within the courses of Web apps I. During these courses, we learned
             how to gradually build a website with HTML and CSS. After each course, we had the opportunity to implement

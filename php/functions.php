@@ -21,6 +21,7 @@ function getHead()
         <link href="node_modules/font-awesome/css/font-awesome.css" rel="stylesheet"/>
         <link href="css/styles.css" rel="stylesheet"/>
         <link href="node_modules/css-ripple-effect/dist/ripple.css" rel="stylesheet"/>
+        <link href="node_modules/animate.css/animate.min.css" rel="stylesheet"/>        
         '
         :
         '<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />');

@@ -3,6 +3,7 @@
 @import url("../node_modules/reset-css/reset.css");
 @import url("../build/font-awesome/css/font-awesome.min.css");
 @import url("../node_modules/css-ripple-effect/dist/ripple.min.css");
+@import url("../node_modules/animate.css/animate.min.css");
 /* HEADROOM */
 .headroom {
   transition: 0.3s ease-in-out; }
@@ -55,13 +56,6 @@
   margin-left: 0;
   position: fixed;
   min-height: 100%; }
-  #menu #sublist {
-    border-bottom: none;
-    font-size: 1em;
-    display: none;
-    margin-left: 1em; }
-    #menu #sublist ul {
-      padding-top: 0; }
   #menu ul {
     padding-left: 0; }
     #menu ul:first-child {
@@ -173,9 +167,6 @@ body,
 #content,
 #cv {
   padding-top: 5%; }
-
-#panel {
-  display: none; }
 
 .iframe {
   display: flex;
@@ -459,7 +450,7 @@ figure {
 
   #menu {
     display: block;
-    width: 0;
+    width: 256px;
     height: 100%; }
     #menu a {
       font-size: 1.3em; }

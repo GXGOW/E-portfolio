@@ -67,15 +67,6 @@
     margin-left: 0;
     position: fixed;
     min-height: 100%;
-    #sublist {
-        border-bottom: none;
-        font-size: 1em;
-        display: none;
-        margin-left: 1em;
-        ul {
-            padding-top: 0;
-        }
-    }
     ul {
         &:first-child {
             padding-top: 2em;
@@ -217,10 +208,6 @@ body,
 #content,
 #cv {
     padding-top: 5%;
-}
-
-#panel {
-    display: none;
 }
 
 .iframe {
@@ -574,7 +561,7 @@ figure {
     }
     #menu {
         display: block;
-        width: 0;
+        width: 256px;
         height: 100%;
         a {
             font-size: 1.3em;
