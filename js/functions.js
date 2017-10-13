@@ -121,6 +121,15 @@ var mainView = {
                 }
             });
         });
+        if (isMobile) {
+            $("#menu").removeClass('animated slideInLeft');
+        } else {
+            $('#menu').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
+                $(this).removeClass('animated slideInLeft');
+            });
+        }
+
+
     },
     initLoader: function() {
         $('#expList').find('a').click(function() {
