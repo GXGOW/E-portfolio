@@ -84,7 +84,7 @@ function getMenu()
     global $transmenu;
     include 'locale/' . $_SESSION['lang'] . '/menu.php';
     echo
-        '<nav id="menu">
+        '<nav class="animated slideInLeft" id="menu">
         <ul>
             <li><a href="#index" class="current"><i class="fa fa-home" aria-hidden="true"></i> ' . $transmenu[0] . '</a></li>
             <li><a href="#profile"><i class="fa fa-male" aria-hidden="true"></i> ' . $transmenu[1] . '</a></li>
