@@ -16,7 +16,7 @@ include 'locale/' . $_SESSION["lang"] . '/' . basename($_SERVER["PHP_SELF"]);?>
 }</style>
 </noscript>
         <?php getMenu(); ?>
-        <div class="animated zoomIn" id="panel">
+        <div id="panel">
             <header>
                 <button class="toggle-button">
                 <svg height="32px" id="Layer_1" style="enable-background:new 0 0 32 32;" version="1.1" viewBox="0 0 32 32" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
